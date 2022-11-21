@@ -12,6 +12,7 @@
 		C3A12CF9292C3E4100DFC7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */; };
 		C3A12CFD292C3E4100DFC7DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */; };
 		C3A12D04292C3E8700DFC7DD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12D03292C3E8700DFC7DD /* GameModel.swift */; };
+		C3A12D06292C3F3900DFC7DD /* TrucoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12D05292C3F3900DFC7DD /* TrucoViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +23,7 @@
 		C3A12CFA292C3E4100DFC7DD /* truquito.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = truquito.entitlements; sourceTree = "<group>"; };
 		C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3A12D03292C3E8700DFC7DD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
+		C3A12D05292C3F3900DFC7DD /* TrucoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrucoViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				C3A12CFA292C3E4100DFC7DD /* truquito.entitlements */,
 				C3A12CFB292C3E4100DFC7DD /* Preview Content */,
 				C3A12D03292C3E8700DFC7DD /* GameModel.swift */,
+				C3A12D05292C3F3900DFC7DD /* TrucoViewModel.swift */,
 			);
 			path = truquito;
 			sourceTree = "<group>";
@@ -142,6 +145,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3A12D06292C3F3900DFC7DD /* TrucoViewModel.swift in Sources */,
 				C3A12CF7292C3E4000DFC7DD /* ContentView.swift in Sources */,
 				C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */,
 				C3A12D04292C3E8700DFC7DD /* GameModel.swift in Sources */,
