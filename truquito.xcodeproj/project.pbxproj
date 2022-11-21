@@ -13,6 +13,7 @@
 		C3A12CFD292C3E4100DFC7DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */; };
 		C3A12D04292C3E8700DFC7DD /* GameModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12D03292C3E8700DFC7DD /* GameModel.swift */; };
 		C3A12D06292C3F3900DFC7DD /* TrucoViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12D05292C3F3900DFC7DD /* TrucoViewModel.swift */; };
+		C3A12D09292C403500DFC7DD /* TeamScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12D08292C403500DFC7DD /* TeamScoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,7 @@
 		C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3A12D03292C3E8700DFC7DD /* GameModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameModel.swift; sourceTree = "<group>"; };
 		C3A12D05292C3F3900DFC7DD /* TrucoViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrucoViewModel.swift; sourceTree = "<group>"; };
+		C3A12D08292C403500DFC7DD /* TeamScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeamScoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 		C3A12CF3292C3E4000DFC7DD /* truquito */ = {
 			isa = PBXGroup;
 			children = (
+				C3A12D07292C402400DFC7DD /* Views */,
 				C3A12CF4292C3E4000DFC7DD /* truquitoApp.swift */,
 				C3A12CF6292C3E4000DFC7DD /* ContentView.swift */,
 				C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */,
@@ -73,6 +76,14 @@
 				C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		C3A12D07292C402400DFC7DD /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C3A12D08292C403500DFC7DD /* TeamScoreView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -147,6 +158,7 @@
 			files = (
 				C3A12D06292C3F3900DFC7DD /* TrucoViewModel.swift in Sources */,
 				C3A12CF7292C3E4000DFC7DD /* ContentView.swift in Sources */,
+				C3A12D09292C403500DFC7DD /* TeamScoreView.swift in Sources */,
 				C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */,
 				C3A12D04292C3E8700DFC7DD /* GameModel.swift in Sources */,
 			);
