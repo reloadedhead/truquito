@@ -30,7 +30,7 @@ struct ContentView: View {
                     color: color
                 )
             }
-        }.onLongPressGesture(minimumDuration: 2) {
+        }.onLongPressGesture(minimumDuration: 1) {
             game.reset()
         }
     }
