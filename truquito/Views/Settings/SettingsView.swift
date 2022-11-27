@@ -9,21 +9,23 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var game: TrucoGame
 
     var body: some View {
         NavigationView {
-            Button("Press to dismiss") {
-                dismiss()
+            TeamList(teams: game.teams)
+            .navigationTitle("Configuración")
+            .toolbar() {
+                Button(action: { dismiss() }) {
+                    Text("Listo")
+                }
             }
-            .font(.title)
-            .padding()
-            .background(.black)
-        }.navigationTitle("Settings")
+        }
     }
 }
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environmentObject(TrucoGame())
     }
 }

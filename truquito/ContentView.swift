@@ -57,7 +57,7 @@ struct ContentView: View {
             game.reset()
         }
         .sheet(isPresented: $isSettingsPresented) {
-            SettingsView()
+            SettingsView().environmentObject(game)
         }
 
     }
