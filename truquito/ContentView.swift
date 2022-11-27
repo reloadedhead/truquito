@@ -19,20 +19,47 @@ func random(randomOpacity: Bool = false) -> Color {
 struct ContentView: View {
     @StateObject private var game = TrucoGame()
     
+    @State private var isSettingsPresented = false
+    
+    @Environment(\.colorScheme) private var colorScheme
+    
     let color = random()
     
     var body: some View {
-        VStack {
-            ForEach(game.match.scores, id: \.id) { currentTeamScore in
-                TeamScoreView(
-                    teamScore: currentTeamScore,
-                    onScore: { game.score(for: $0, $1) },
-                    color: color
-                )
+        ZStack(alignment: .top) {
+            HStack {
+                Spacer()
+                Button(action: { isSettingsPresented.toggle() }) {
+                    Image(systemName: "gear.circle.fill")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                        .frame(width: 40, height: 40)
+                        .zIndex(1)
+                }
             }
-        }.onLongPressGesture(minimumDuration: 1) {
+            .padding()
+            .zIndex(10)
+            .tint(colorScheme == .dark ? .white : .black)
+            .opacity(0.5)
+            .onTapGesture { isSettingsPresented.toggle() }
+            
+            VStack {
+                ForEach(game.match.scores, id: \.id) { currentTeamScore in
+                    TeamScoreView(
+                        teamScore: currentTeamScore,
+                        onScore: { game.score(for: $0, $1) },
+                        color: color
+                    )
+                }
+            }
+        }
+        .onLongPressGesture(minimumDuration: 1) {
             game.reset()
         }
+        .sheet(isPresented: $isSettingsPresented) {
+            SettingsView()
+        }
+
     }
 }
 
