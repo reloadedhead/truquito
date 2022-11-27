@@ -19,12 +19,12 @@ struct Team: Identifiable, Equatable {
 
 struct Score: Identifiable, Equatable {
     let id: UUID
-    let team: Team
+    var teamId: UUID
     var value: Int
     
-    init(team: Team) {
+    init(for team: Team) {
         self.id = UUID()
-        self.team = team
+        self.teamId = team.id
         self.value = 0
     }
 }
@@ -32,29 +32,29 @@ struct Score: Identifiable, Equatable {
 struct Match: Identifiable {
     let id: UUID
     var scores: [Score] = []
+    var teams: [Team] = []
     var isPlaying: Bool = true
     
     init(teams: [Team]) {
         self.id = UUID()
+        self.teams = teams
         for team in teams {
-            self.scores.append(Score(team: team))
+            self.scores.append(Score(for: team))
         }
     }
     
-    mutating func score(for team: Team, _ scored: Int) {
-        if let scoreIndex = scores.firstIndex(where: { $0.team == team }) {
+    mutating func updateTeams(teams: [Team]) {
+        self.teams = teams
+    }
+    
+    mutating func score(for teamId: Team.ID, _ scored: Int) {
+        if let scoreIndex = scores.firstIndex(where: { $0.teamId == teamId }) {
             scores[scoreIndex].value += scored
         }
     }
     
     mutating func reset() {
-        self.scores = []
+        self.scores = self.teams.map({ Score(for: $0) })
     }
     
-    mutating func reset(withTeams teams: [Team]) {
-        self.scores = []
-        for team in teams {
-            self.scores.append(Score(team: team))
-        }
-    }
 }

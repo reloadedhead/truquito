@@ -46,11 +46,11 @@ struct ContentView: View {
             VStack {
                 ForEach(game.match.scores, id: \.id) { currentTeamScore in
                     TeamScoreView(
-                        teamScore: currentTeamScore,
+                        score: currentTeamScore,
                         onScore: { game.score(for: $0, $1) },
                         color: color
                     )
-                }
+                }.environmentObject(game)
             }
         }
         .onLongPressGesture(minimumDuration: 1) {

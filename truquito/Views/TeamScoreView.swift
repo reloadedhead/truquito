@@ -9,19 +9,25 @@ import Foundation
 import SwiftUI
 
 struct TeamScoreView: View {
-    var teamScore: Score
-    var onScore: (Team, Int) -> Void
+    @EnvironmentObject var game: TrucoGame
+    
+    var score: Score
+    var onScore: (UUID, Int) -> Void
     var color: Color = random()
     
-    func increase() { onScore(teamScore.team, 1)  }
-    func decrease() { onScore(teamScore.team, -1)  }
+    var team: Team {
+        game.teams.first(where: {$0.id == score.teamId})!
+    }
+    
+    func increase() { onScore(team.id, 1)  }
+    func decrease() { onScore(team.id, -1)  }
     
     var body: some View {
         VStack {
-            Text(teamScore.team.name)
+            Text(team.name)
                 .font(.title2)
                 .bold()
-            Text(teamScore.value.formatted())
+            Text(score.value.formatted())
                 .font(.system(size: 92, design: .monospaced))
                 .bold().scaledToFit()
         }
@@ -36,17 +42,5 @@ struct TeamScoreView: View {
             .onTapGesture { increase() }
             .gesture(DragGesture(minimumDistance: 5)
                 .onEnded({ _ in decrease() }))
-    }
-}
-
-struct TeamScoreView_Previews: PreviewProvider {
-    static var previews: some View {
-        VStack {
-            TeamScoreView(
-                teamScore: Score(team: Team(name: "Preview")),
-                onScore: { _,_ in print("Preview!") },
-                color: .brown
-            )
-        }
     }
 }
