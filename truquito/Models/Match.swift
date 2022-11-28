@@ -7,28 +7,6 @@
 
 import Foundation
 
-struct Team: Identifiable, Equatable {
-    let id: UUID
-    var name: String
-    
-    init(name: String) {
-        self.name = name
-        self.id = UUID()
-    }
-}
-
-struct Score: Identifiable, Equatable {
-    let id: UUID
-    var teamId: UUID
-    var value: Int
-    
-    init(for team: Team) {
-        self.id = UUID()
-        self.teamId = team.id
-        self.value = 0
-    }
-}
-
 struct Match: Identifiable {
     let id: UUID
     var scores: [Score] = []
