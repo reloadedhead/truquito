@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TeamSettings: View {
-    @EnvironmentObject var game: TrucoGame
+    @EnvironmentObject var game: GameStore
     var team: Team
     
     var teamIndex: Int {
@@ -22,14 +22,5 @@ struct TeamSettings: View {
             }
         }
         .navigationTitle(team.name)
-    }
-}
-
-struct TeamSettings_Previews: PreviewProvider {
-    static var previews: some View {
-        let game = TrucoGame()
-        
-        TeamSettings(team: game.teams[0])
-            .environmentObject(game)
     }
 }

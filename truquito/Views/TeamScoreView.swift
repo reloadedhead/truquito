@@ -9,14 +9,14 @@ import Foundation
 import SwiftUI
 
 struct TeamScoreView: View {
-    @EnvironmentObject var game: TrucoGame
+    @EnvironmentObject var game: GameStore
     
     var score: Score
     var onScore: (UUID, Int) -> Void
     var color: Color = random()
     
     var team: Team {
-        game.teams.first(where: {$0.id == score.teamId})!
+        game.teams.first(where: {$0.id == score.teamId}) ?? Team(name: "Placehoder")
     }
     
     func increase() { onScore(team.id, 1)  }

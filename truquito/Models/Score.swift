@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Score: Identifiable, Equatable {
+struct Score: Identifiable, Equatable, Codable {
     let id: UUID
     var teamId: UUID
     var value: Int

@@ -7,21 +7,11 @@
 
 import SwiftUI
 
-func random(randomOpacity: Bool = false) -> Color {
-    Color(
-        red: .random(in: 0...1),
-        green: .random(in: 0...1),
-        blue: .random(in: 0...1),
-        opacity: randomOpacity ? .random(in: 0...1) : 1
-    )
-}
-
-struct ContentView: View {
-    @StateObject private var game = TrucoGame()
-    
+struct GameView: View {
+    @StateObject private var gameStore = GameStore()
     @State private var isSettingsPresented = false
-    
     @Environment(\.colorScheme) private var colorScheme
+    @Environment(\.scenePhase) private var scenePhase
     
     let color = random()
     
@@ -44,28 +34,39 @@ struct ContentView: View {
             .onTapGesture { isSettingsPresented.toggle() }
             
             VStack {
-                ForEach(game.match.scores, id: \.id) { currentTeamScore in
+                ForEach(gameStore.match.scores, id: \.id) { currentTeamScore in
                     TeamScoreView(
                         score: currentTeamScore,
-                        onScore: { game.score(for: $0, $1) },
+                        onScore: { gameStore.score(for: $0, $1) },
                         color: color
                     )
-                }.environmentObject(game)
+                }.environmentObject(gameStore)
             }
         }
         .onLongPressGesture(minimumDuration: 1) {
-            game.reset()
+            gameStore.reset()
         }
         .sheet(isPresented: $isSettingsPresented) {
-            SettingsView().environmentObject(game)
+            SettingsView().environmentObject(gameStore)
         }
-
+        .onChange(of: scenePhase) { phase in
+            if phase == .inactive {
+                GameStore.save(match: gameStore.match) { result in
+                    if case .failure(let error) = result {
+                        fatalError(error.localizedDescription)
+                    }
+                }
+            }
+        }
+        .onAppear {
+            GameStore.load { result in
+                switch result {
+                case .failure(let error):
+                    fatalError(error.localizedDescription)
+                case .success(let match):
+                    gameStore.match = match
+                }
+            }
+        }
     }
 }
-
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-

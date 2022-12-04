@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Match: Identifiable {
+struct Match: Identifiable, Codable {
     let id: UUID
     var scores: [Score] = []
     var teams: [Team] = []

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var game: TrucoGame
+    @EnvironmentObject var game: GameStore
 
     var body: some View {
         NavigationView {
@@ -21,11 +21,5 @@ struct SettingsView: View {
                 }
             }
         }
-    }
-}
-
-struct SettingsView_Previews: PreviewProvider {
-    static var previews: some View {
-        SettingsView().environmentObject(TrucoGame())
     }
 }
