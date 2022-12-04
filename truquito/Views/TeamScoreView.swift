@@ -13,7 +13,6 @@ struct TeamScoreView: View {
     
     var score: Score
     var onScore: (UUID, Int) -> Void
-    var color: Color = random()
     
     var team: Team {
         game.teams.first(where: {$0.id == score.teamId}) ?? Team(name: "Placehoder")
@@ -37,7 +36,7 @@ struct TeamScoreView: View {
                 minHeight: 0,
                 maxHeight: .infinity
             )
-            .background(color)
+            .background(team.color)
             .contentShape(Rectangle())
             .onTapGesture { increase() }
             .gesture(DragGesture(minimumDistance: 5)

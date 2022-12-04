@@ -35,11 +35,9 @@ struct GameView: View {
             
             VStack {
                 ForEach(gameStore.match.scores, id: \.id) { currentTeamScore in
-                    TeamScoreView(
-                        score: currentTeamScore,
-                        onScore: { gameStore.score(for: $0, $1) },
-                        color: color
-                    )
+                    TeamScoreView(score: currentTeamScore) {
+                        gameStore.score(for: $0, $1)
+                    }
                 }.environmentObject(gameStore)
             }
         }

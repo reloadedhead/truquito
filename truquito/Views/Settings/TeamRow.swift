@@ -14,6 +14,7 @@ struct TeamRow: View {
         HStack {
             Image(systemName: "person.circle.fill")
                 .frame(width: 10)
+                .foregroundColor(team.color)
             Text(team.name)
             Spacer()
         }

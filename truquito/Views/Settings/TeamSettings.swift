@@ -20,6 +20,9 @@ struct TeamSettings: View {
             Section("Nombre") {
                 TextField("Nombre", text: $game.teams[teamIndex].name)
             }
+            Section("Color") {
+                ColorPicker("Selecciona un color", selection: $game.teams[teamIndex].color, supportsOpacity: false)
+            }
         }
         .navigationTitle(team.name)
     }
