@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct TeamSettings: View {
-    @EnvironmentObject var game: GameStore
+    @EnvironmentObject var game: GameViewModel
     var team: Team
     
     var teamIndex: Int {

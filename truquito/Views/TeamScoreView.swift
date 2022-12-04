@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 struct TeamScoreView: View {
-    @EnvironmentObject var game: GameStore
+    @EnvironmentObject var game: GameViewModel
     
     var score: Score
     var onScore: (UUID, Int) -> Void

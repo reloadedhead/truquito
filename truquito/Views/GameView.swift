@@ -8,7 +8,8 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject private var gameStore = GameStore()
+    @StateObject private var game = GameViewModel()
+    
     @State private var isSettingsPresented = false
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
@@ -34,37 +35,22 @@ struct GameView: View {
             .onTapGesture { isSettingsPresented.toggle() }
             
             VStack(spacing: 0) {
-                ForEach(gameStore.match.scores, id: \.id) { currentTeamScore in
+                ForEach(game.match.scores, id: \.id) { currentTeamScore in
                     TeamScoreView(score: currentTeamScore) {
-                        gameStore.score(for: $0, $1)
+                        game.score(for: $0, $1)
                     }
-                }.environmentObject(gameStore)
+                }.environmentObject(game)
             }
         }
         .onLongPressGesture(minimumDuration: 1) {
-            gameStore.reset()
+            game.reset()
         }
         .sheet(isPresented: $isSettingsPresented) {
-            SettingsView().environmentObject(gameStore)
+            SettingsView().environmentObject(game)
         }
         .onChange(of: scenePhase) { phase in
-            if phase == .inactive {
-                GameStore.save(match: gameStore.match) { result in
-                    if case .failure(let error) = result {
-                        fatalError(error.localizedDescription)
-                    }
-                }
-            }
+            if phase == .inactive { game.save() }
         }
-        .onAppear {
-            GameStore.load { result in
-                switch result {
-                case .failure(let error):
-                    fatalError(error.localizedDescription)
-                case .success(let match):
-                    gameStore.match = match
-                }
-            }
-        }
+        .onAppear { game.load() }
     }
 }

@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var game: GameStore
+    @EnvironmentObject var game: GameViewModel
 
     var body: some View {
         NavigationView {
