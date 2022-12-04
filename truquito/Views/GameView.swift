@@ -33,7 +33,7 @@ struct GameView: View {
             .opacity(0.5)
             .onTapGesture { isSettingsPresented.toggle() }
             
-            VStack {
+            VStack(spacing: 0) {
                 ForEach(gameStore.match.scores, id: \.id) { currentTeamScore in
                     TeamScoreView(score: currentTeamScore) {
                         gameStore.score(for: $0, $1)
