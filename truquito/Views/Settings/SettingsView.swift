@@ -18,7 +18,7 @@ struct SettingsView: View {
                 LogList(matches: game.history
                     .sorted { $0.endDate ?? $0.beginDate > $01.endDate ?? $01.beginDate }
                     .filter { $0.endDate != nil }
-                )
+                ) { game.removeHistory(atOffsets: $0) }
             }
             .navigationTitle("Configuración")
             .toolbar() {

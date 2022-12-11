@@ -92,4 +92,10 @@ class GameViewModel: ObservableObject {
         let newMatch = Match(teams: self.match.teams)
         self.history.append(newMatch)
     }
+    
+//    MARK: INTENT DELETE HISTORY
+    
+    func removeHistory(atOffsets: IndexSet) {
+        self.history.remove(atOffsets: atOffsets)
+    }
 }
