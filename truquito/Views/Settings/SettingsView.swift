@@ -13,7 +13,10 @@ struct SettingsView: View {
 
     var body: some View {
         NavigationView {
-            TeamList(teams: game.teams)
+            List {
+                TeamList(teams: game.teams)
+                LogList(matches: game.history.sorted(by: { $0.endDate ?? $0.beginDate > $01.endDate ?? $01.beginDate }))
+            }
             .navigationTitle("Configuración")
             .toolbar() {
                 Button(action: { dismiss() }) {

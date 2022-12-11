@@ -10,7 +10,6 @@ import SwiftUI
 struct TeamList: View {
     var teams: [Team]
     var body: some View {
-        List {
             Section("Equipos") {
                 ForEach(teams) { team in
                     NavigationLink(destination: TeamSettings(team: team)) {
@@ -18,7 +17,6 @@ struct TeamList: View {
                     }
                 }
             }
-        }
     }
 }
 

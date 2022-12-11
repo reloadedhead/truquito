@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C300031C29464C7800BDE67F /* LogView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C300031B29464C7800BDE67F /* LogView.swift */; };
 		C316327B29354142005BBBCA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316327A29354141005BBBCA /* Team.swift */; };
 		C316327D2935415D005BBBCA /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316327C2935415D005BBBCA /* Score.swift */; };
 		C32941F82933E21F00298ACC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32941F72933E21F00298ACC /* SettingsView.swift */; };
@@ -22,12 +23,13 @@
 		C3FDED67293C8A36000B2039 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED66293C8A36000B2039 /* GameStore.swift */; };
 		C3FDED69293C9129000B2039 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED68293C9129000B2039 /* utils.swift */; };
 		C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */; };
-		C3FDED6E293C9E9B000B2039 /* History.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED6D293C9E9B000B2039 /* History.swift */; };
-		C3FDED73293CA0A1000B2039 /* HistoryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED72293CA0A1000B2039 /* HistoryStore.swift */; };
 		C3FDED75293CA113000B2039 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED74293CA113000B2039 /* GameViewModel.swift */; };
+		C3FDED77293CB086000B2039 /* LogRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED76293CB086000B2039 /* LogRow.swift */; };
+		C3FDED79293CB116000B2039 /* LogList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED78293CB116000B2039 /* LogList.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C300031B29464C7800BDE67F /* LogView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogView.swift; sourceTree = "<group>"; };
 		C316327A29354141005BBBCA /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
 		C316327C2935415D005BBBCA /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		C32941F72933E21F00298ACC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -45,9 +47,9 @@
 		C3FDED66293C8A36000B2039 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameStore.swift; path = truquito/Stores/GameStore.swift; sourceTree = SOURCE_ROOT; };
 		C3FDED68293C9129000B2039 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
-		C3FDED6D293C9E9B000B2039 /* History.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = History.swift; sourceTree = "<group>"; };
-		C3FDED72293CA0A1000B2039 /* HistoryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryStore.swift; sourceTree = "<group>"; };
 		C3FDED74293CA113000B2039 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
+		C3FDED76293CB086000B2039 /* LogRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogRow.swift; sourceTree = "<group>"; };
+		C3FDED78293CB116000B2039 /* LogList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogList.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -67,7 +69,6 @@
 				C3A12D03292C3E8700DFC7DD /* Match.swift */,
 				C316327A29354141005BBBCA /* Team.swift */,
 				C316327C2935415D005BBBCA /* Score.swift */,
-				C3FDED6D293C9E9B000B2039 /* History.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -79,6 +80,9 @@
 				C32941FB2933F9AD00298ACC /* TeamList.swift */,
 				C32941F72933E21F00298ACC /* SettingsView.swift */,
 				C32941FE2933FD9800298ACC /* TeamSettings.swift */,
+				C3FDED76293CB086000B2039 /* LogRow.swift */,
+				C3FDED78293CB116000B2039 /* LogList.swift */,
+				C300031B29464C7800BDE67F /* LogView.swift */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -146,7 +150,6 @@
 			isa = PBXGroup;
 			children = (
 				C3FDED66293C8A36000B2039 /* GameStore.swift */,
-				C3FDED72293CA0A1000B2039 /* HistoryStore.swift */,
 			);
 			path = Stores;
 			sourceTree = "<group>";
@@ -221,17 +224,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3FDED79293CB116000B2039 /* LogList.swift in Sources */,
 				C3FDED67293C8A36000B2039 /* GameStore.swift in Sources */,
 				C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */,
-				C3FDED6E293C9E9B000B2039 /* History.swift in Sources */,
 				C3A12D09292C403500DFC7DD /* TeamScoreView.swift in Sources */,
 				C3FDED75293CA113000B2039 /* GameViewModel.swift in Sources */,
 				C32941FA2933F86A00298ACC /* TeamRow.swift in Sources */,
 				C32941FC2933F9AD00298ACC /* TeamList.swift in Sources */,
+				C300031C29464C7800BDE67F /* LogView.swift in Sources */,
 				C3FDED69293C9129000B2039 /* utils.swift in Sources */,
-				C3FDED73293CA0A1000B2039 /* HistoryStore.swift in Sources */,
 				C32941F82933E21F00298ACC /* SettingsView.swift in Sources */,
 				C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */,
+				C3FDED77293CB086000B2039 /* LogRow.swift in Sources */,
 				C32941FF2933FD9800298ACC /* TeamSettings.swift in Sources */,
 				C316327B29354142005BBBCA /* Team.swift in Sources */,
 				C316327D2935415D005BBBCA /* Score.swift in Sources */,

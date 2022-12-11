@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class GameStore {
-    var match: Match = Match(teams: [Team(name: "Nosotros"), Team(name: "Ellos")])
+    var matches: [Match] = [Match(teams: [Team(name: "Ellos"), Team(name: "Nosotros")])]
     
     private static func fileURL() throws -> URL {
         try FileManager.default.url(
@@ -21,19 +21,19 @@ class GameStore {
         .appendingPathComponent("game.data")
     }
     
-    static func load(completion: @escaping (Result<Match, Error>)->Void) {
+    static func load(completion: @escaping (Result<[Match], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
                 let fileURL = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {
                     DispatchQueue.main.async {
-                        completion(.success(Match(teams: [Team(name: "Nosotros"), Team(name: "Ellos")])))
+                        completion(.success([Match(teams: [Team(name: "Ellos"), Team(name: "Nosotros")])]))
                     }
                     return
                 }
-                let match = try JSONDecoder().decode(Match.self, from: file.availableData)
+                let matches = try JSONDecoder().decode([Match].self, from: file.availableData)
                 DispatchQueue.main.async {
-                    completion(.success(match))
+                    completion(.success(matches))
                 }
             } catch {
                 DispatchQueue.main.async {
@@ -43,14 +43,14 @@ class GameStore {
         }
     }
     
-    static func save(match: Match, completion: @escaping ((Result<Match, Error>) -> Void)) {
+    static func save(matches: [Match], completion: @escaping ((Result<[Match], Error>) -> Void)) {
         DispatchQueue.global(qos: .background).async {
             do {
-                let data = try JSONEncoder().encode(match)
+                let data = try JSONEncoder().encode(matches)
                 let outfile = try fileURL()
                 try data.write(to: outfile)
                 DispatchQueue.main.async {
-                    completion(.success(match))
+                    completion(.success(matches))
                 }
             } catch {
                 DispatchQueue.main.async {

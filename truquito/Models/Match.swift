@@ -11,11 +11,14 @@ struct Match: Identifiable, Codable {
     let id: UUID
     var scores: [Score] = []
     var teams: [Team] = []
-    var isPlaying: Bool = true
+    var beginDate: Date
+    var endDate: Date? = nil
     
     init(teams: [Team]) {
         self.id = UUID()
         self.teams = teams
+        self.beginDate = Date.now
+        
         for team in teams {
             self.scores.append(Score(for: team))
         }

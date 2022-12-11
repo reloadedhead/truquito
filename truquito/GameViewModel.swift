@@ -8,9 +8,17 @@
 import Foundation
 
 class GameViewModel: ObservableObject {
-    private var gameStore = GameStore()
+    @Published private var gameStore: GameStore
+    @Published private(set) var history: [Match]
     
-    @Published var match: Match
+    var match: Match {
+        get {
+            self.history.last!
+        } set(match) {
+            history.removeLast()
+            history.append(match)
+        }
+    }
     
     var teams: [Team] {
           get {
@@ -22,22 +30,25 @@ class GameViewModel: ObservableObject {
       }
     
     init() {
-        self.match = gameStore.match
+        let gameStore = GameStore()
+        self.gameStore = gameStore
+        self.history = gameStore.matches
     }
     
     func load() {
         GameStore.load { result in
             switch result {
             case .failure(let error):
-                fatalError(error.localizedDescription)
-            case .success(let match):
-                self.match = match
+                print(error)
+            case .success(let matches):
+                self.match = matches.first!
+                self.history = matches
             }
         }
     }
     
     func save() {
-        GameStore.save(match: self.match) { result in
+        GameStore.save(matches: self.history) { result in
             if case .failure(let error) = result {
                 fatalError(error.localizedDescription)
             }
@@ -76,6 +87,9 @@ class GameViewModel: ObservableObject {
 //    MARK: INTENT RESET GAME
     
     func reset() {
-        match.reset()
+        self.match.endDate = Date.now
+        
+        let newMatch = Match(teams: self.match.teams)
+        self.history.append(newMatch)
     }
 }
