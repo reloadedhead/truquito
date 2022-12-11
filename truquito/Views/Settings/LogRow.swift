@@ -24,9 +24,6 @@ func getLogLabel(for log: Match) -> String {
     let dateFormatter = DateFormatter()
     dateFormatter.dateStyle = .short
     
-    if (log.endDate == nil) {
-        return "En curso"
-    }
     if let winnerId = getWinnerId(for: log) {
         return String("\(dateFormatter.string(from: log.endDate!)) – ganó \(log.teams.first(where: { $0.id == winnerId })!.name)")
     } else {
@@ -35,7 +32,6 @@ func getLogLabel(for log: Match) -> String {
 }
 
 func getWinnerId(for match: Match) -> UUID? {
-    print(match.scores)
     if let winner = match.scores.first(where: {
         $0.value == 30
     }) {
