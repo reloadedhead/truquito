@@ -9,22 +9,22 @@ import Foundation
 import SwiftUI
 
 extension Color {
-    static func fromString(_ string: String) -> Color {
-        guard let color = UIColor(named: string) else {
-            return Color.clear
-        }
-        return Color(color)
+    var hexString: String? {
+        guard let components = UIColor(self).cgColor.components else { return nil }
+        let r = Float(components[0])
+        let g = Float(components[1])
+        let b = Float(components[2])
+        return String(format: "#%02lX%02lX%02lX", lroundf(r * 255), lroundf(g * 255), lroundf(b * 255))
     }
 }
-
 
 extension Player {
     var color: Color {
         get {
-            return Color.fromString(self.colorString ?? "#000000")
+            return Color(hex: self.colorString!)
         }
         set {
-            self.colorString = newValue.description
+            self.colorString = newValue.hexString!
         }
     }
 }

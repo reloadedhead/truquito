@@ -21,7 +21,7 @@ struct PlayerListView: View {
                     HStack {
                         Image(systemName: "person.circle.fill")
                             .frame(width: 10)
-                            .foregroundColor(.orange)
+                            .foregroundColor(player.color)
                         Text(player.name ?? "Unknown")
                         Spacer()
                     }

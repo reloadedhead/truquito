@@ -31,6 +31,7 @@ class PlayerManager: ObservableObject {
     func add(name: String) {
         let newPlayer = Player(context: context)
         newPlayer.name = name
+        newPlayer.color = .orange
         
         self.save()
     }

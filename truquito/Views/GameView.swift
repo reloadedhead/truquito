@@ -23,8 +23,8 @@ struct GameView: View {
         game.load()
         print("Players loaded: \(players.count)")
         if (players.isEmpty) {
-            playerStore.add(name: "Nosotros")
-            playerStore.add(name: "Ellos")
+            playerStore.add(name: "Nosotros", color: .green)
+            playerStore.add(name: "Ellos", color: .brown)
         }
     }
     
