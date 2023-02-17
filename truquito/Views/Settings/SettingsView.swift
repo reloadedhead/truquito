@@ -9,16 +9,12 @@ import SwiftUI
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    @EnvironmentObject var game: GameViewModel
+    @Environment(\.managedObjectContext) var viewContext
 
     var body: some View {
         NavigationView {
             List {
-                TeamList(teams: game.teams)
-                LogList(matches: game.history
-                    .sorted { $0.endDate ?? $0.beginDate > $01.endDate ?? $01.beginDate }
-                    .filter { $0.endDate != nil }
-                ) { game.removeHistory(atOffsets: $0) }
+                PlayerListView()
             }
             .navigationTitle("Configuración")
             .toolbar() {
