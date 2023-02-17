@@ -9,12 +9,13 @@ import SwiftUI
 
 struct CreatePlayer: View {
     @State private var name: String = ""
+    @State private var color: Color = .orange
     @Environment(\.presentationMode) var presentationMode
 
     let playerManager = PlayerManager()
     
     func handleSave() {
-        playerManager.add(name: name)
+        playerManager.add(name: name, color: color)
         
         self.presentationMode.wrappedValue.dismiss()
     }
@@ -24,6 +25,9 @@ struct CreatePlayer: View {
             List {
                 Section("Nombre") {
                     TextField("Nombre", text: $name)
+                }
+                Section("Color") {
+                    ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false)
                 }
             }
         
