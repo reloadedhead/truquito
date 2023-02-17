@@ -9,9 +9,9 @@ import Foundation
 
 class GameViewModel: ObservableObject {
     @Published private var gameStore: GameStore
-    @Published private(set) var history: [Match]
+    @Published private(set) var history: [Match__DEPRECATED]
     
-    var match: Match {
+    var match: Match__DEPRECATED {
         get {
             self.history.last!
         } set(match) {
@@ -89,7 +89,7 @@ class GameViewModel: ObservableObject {
     func reset() {
         self.match.endDate = Date.now
         
-        let newMatch = Match(teams: self.match.teams)
+        let newMatch = Match__DEPRECATED(teams: self.match.teams)
         self.history.append(newMatch)
     }
     

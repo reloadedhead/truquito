@@ -9,7 +9,7 @@ import Foundation
 import SwiftUI
 
 class GameStore {
-    var matches: [Match] = [Match(teams: [Team(name: "Ellos"), Team(name: "Nosotros")])]
+    var matches: [Match__DEPRECATED] = [Match__DEPRECATED(teams: [Team(name: "Ellos"), Team(name: "Nosotros")])]
     
     private static func fileURL() throws -> URL {
         try FileManager.default.url(
@@ -21,17 +21,17 @@ class GameStore {
         .appendingPathComponent("game.data")
     }
     
-    static func load(completion: @escaping (Result<[Match], Error>)->Void) {
+    static func load(completion: @escaping (Result<[Match__DEPRECATED], Error>)->Void) {
         DispatchQueue.global(qos: .background).async {
             do {
                 let fileURL = try fileURL()
                 guard let file = try? FileHandle(forReadingFrom: fileURL) else {
                     DispatchQueue.main.async {
-                        completion(.success([Match(teams: [Team(name: "Ellos"), Team(name: "Nosotros")])]))
+                        completion(.success([Match__DEPRECATED(teams: [Team(name: "Ellos"), Team(name: "Nosotros")])]))
                     }
                     return
                 }
-                let matches = try JSONDecoder().decode([Match].self, from: file.availableData)
+                let matches = try JSONDecoder().decode([Match__DEPRECATED].self, from: file.availableData)
                 DispatchQueue.main.async {
                     completion(.success(matches))
                 }
@@ -43,7 +43,7 @@ class GameStore {
         }
     }
     
-    static func save(matches: [Match], completion: @escaping ((Result<[Match], Error>) -> Void)) {
+    static func save(matches: [Match__DEPRECATED], completion: @escaping ((Result<[Match__DEPRECATED], Error>) -> Void)) {
         DispatchQueue.global(qos: .background).async {
             do {
                 let data = try JSONEncoder().encode(matches)
