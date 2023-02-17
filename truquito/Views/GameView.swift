@@ -8,11 +8,25 @@
 import SwiftUI
 
 struct GameView: View {
-    @StateObject private var game = GameViewModel()
-    
-    @State private var isSettingsPresented = false
+    @Environment(\.managedObjectContext) var viewContext
     @Environment(\.colorScheme) private var colorScheme
     @Environment(\.scenePhase) private var scenePhase
+    
+    @FetchRequest(sortDescriptors: [SortDescriptor(\.name)]) var players: FetchedResults<Player>
+    
+    @StateObject private var game = GameViewModel()
+    @State private var isSettingsPresented = false
+    
+    private let playerStore = PlayerManager()
+    
+    func initialLoad() {
+        game.load()
+        print("Players loaded: \(players.count)")
+        if (players.isEmpty) {
+            playerStore.add(name: "Nosotros")
+            playerStore.add(name: "Ellos")
+        }
+    }
     
     let color = random()
     
@@ -46,11 +60,11 @@ struct GameView: View {
             game.reset()
         }
         .sheet(isPresented: $isSettingsPresented) {
-            SettingsView().environmentObject(game)
+            SettingsView().environment(\.managedObjectContext, viewContext)
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { game.save() }
         }
-        .onAppear { game.load() }
+        .onAppear { initialLoad() }
     }
 }
