@@ -9,7 +9,7 @@ import Foundation
 
 struct Match__DEPRECATED: Identifiable, Codable {
     let id: UUID
-    var scores: [Score] = []
+    var scores: [Score__DEPRECATEED] = []
     var teams: [Team] = []
     var beginDate: Date
     var endDate: Date? = nil
@@ -20,7 +20,7 @@ struct Match__DEPRECATED: Identifiable, Codable {
         self.beginDate = Date.now
         
         for team in teams {
-            self.scores.append(Score(for: team))
+            self.scores.append(Score__DEPRECATEED(for: team))
         }
     }
     
@@ -35,7 +35,7 @@ struct Match__DEPRECATED: Identifiable, Codable {
     }
     
     mutating func reset() {
-        self.scores = self.teams.map({ Score(for: $0) })
+        self.scores = self.teams.map({ Score__DEPRECATEED(for: $0) })
     }
     
 }
