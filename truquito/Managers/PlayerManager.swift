@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import CoreData
 
 class PlayerManager: ObservableObject {
@@ -28,9 +29,10 @@ class PlayerManager: ObservableObject {
         }
     }
     
-    func add(name: String) {
+    func add(name: String, color: Color) {
         let newPlayer = Player(context: context)
         newPlayer.name = name
+        newPlayer.color = color
         
         self.save()
     }
