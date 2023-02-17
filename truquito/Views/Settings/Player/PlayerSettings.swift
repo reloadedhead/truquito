@@ -19,7 +19,7 @@ struct PlayerSettings: View {
         self.player = player
         self.onSave = onSave
         self.onDelete = onDelete
-        _name = State(initialValue: player.name!)
+        _name = State(initialValue: player.name ?? "")
     }
     
     func handleDelete() {

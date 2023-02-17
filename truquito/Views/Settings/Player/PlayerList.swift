@@ -13,7 +13,11 @@ struct PlayerListView: View {
     var body: some View {
         Section("Jugadores") {
             ForEach(playerManager.players) { player in
-                NavigationLink(destination: PlayerSettings(player: player, onDelete: playerManager.delete, onSave: playerManager.save)) {
+                NavigationLink(destination: PlayerSettings(
+                    player: player,
+                    onDelete: playerManager.delete,
+                    onSave: playerManager.save))
+                {
                     HStack {
                         Image(systemName: "person.circle.fill")
                             .frame(width: 10)
@@ -22,6 +26,10 @@ struct PlayerListView: View {
                         Spacer()
                     }
                 }
+            }
+            NavigationLink(destination: CreatePlayer())
+            {
+                Text("Nuevo jugador")
             }
         }.onAppear {
             playerManager.fetchAll()
