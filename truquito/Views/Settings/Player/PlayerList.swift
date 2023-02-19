@@ -1,18 +1,22 @@
 //
-//  PlayerListView.swift
+//  PlayerList.swift
 //  truquito
 //
-//  Created by Tomás García Gobet on 13.02.23.
+//  Created by Tomás García Gobet on 19.02.23.
 //
 
 import SwiftUI
 
-struct PlayerListPreview: View {
-    @ObservedObject private var playerManager = PlayerManager()
+struct PlayerList: View {
+    @ObservedObject private var playerManager: PlayerManager
+    
+    init(managedBy manager: PlayerManager) {
+        self.playerManager = manager
+    }
     
     var body: some View {
-        Section("Jugadores") {
-            ForEach(playerManager.players.prefix(3)) { player in
+        List {
+            ForEach(playerManager.players) { player in
                 NavigationLink(destination: PlayerSettings(
                     player: player,
                     onDelete: playerManager.delete,
@@ -27,18 +31,13 @@ struct PlayerListPreview: View {
                     }
                 }
             }
-            
-            NavigationLink(destination: PlayerList(managedBy: playerManager)) {
-                Text("Ver más...")
-            }
-        }.onAppear {
-            playerManager.fetchPlayers()
         }
-    }
-}
-
-struct PlayerListView_Previews: PreviewProvider {
-    static var previews: some View {
-        PlayerListPreview()
+        .navigationTitle("Jugadores")
+        .toolbar {
+            NavigationLink(destination: CreatePlayer()) {
+                Image(systemName: "plus")
+            }
+        }
+        .onAppear { playerManager.fetchPlayers() }
     }
 }
