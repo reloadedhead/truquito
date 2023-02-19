@@ -14,16 +14,16 @@
 		C35DBB7B299AD18200C6E43A /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7A299AD18200C6E43A /* PlayerList.swift */; };
 		C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */; };
 		C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */; };
-		C38EA1BE299FB81200FDC82A /* Player+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BD299FB81200FDC82A /* Player+Extension.swift */; };
+		C38EA1BE299FB81200FDC82A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BD299FB81200FDC82A /* Player.swift */; };
 		C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12CF4292C3E4000DFC7DD /* truquitoApp.swift */; };
 		C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12CF6292C3E4000DFC7DD /* GameView.swift */; };
 		C3A12CF9292C3E4100DFC7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */; };
 		C3A12CFD292C3E4100DFC7DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */; };
-		C3D073C329A22D0F000A1494 /* Score+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C229A22D0F000A1494 /* Score+Extension.swift */; };
+		C3D073C329A22D0F000A1494 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C229A22D0F000A1494 /* Score.swift */; };
 		C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A21D299FD063001683A0 /* MatchManager.swift */; };
 		C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A220299FDC17001683A0 /* Toolbar.swift */; };
 		C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A222299FDD10001683A0 /* PlayerScore.swift */; };
-		C3E3A225299FE593001683A0 /* Match+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match+Extension.swift */; };
+		C3E3A225299FE593001683A0 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match.swift */; };
 		C3FDED69293C9129000B2039 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED68293C9129000B2039 /* utils.swift */; };
 		C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */; };
 /* End PBXBuildFile section */
@@ -36,18 +36,18 @@
 		C35DBB7A299AD18200C6E43A /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 		C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayer.swift; sourceTree = "<group>"; };
-		C38EA1BD299FB81200FDC82A /* Player+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Extension.swift"; sourceTree = "<group>"; };
+		C38EA1BD299FB81200FDC82A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 		C3A12CF1292C3E4000DFC7DD /* truquito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = truquito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A12CF4292C3E4000DFC7DD /* truquitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = truquitoApp.swift; sourceTree = "<group>"; };
 		C3A12CF6292C3E4000DFC7DD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
 		C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3A12CFA292C3E4100DFC7DD /* truquito.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = truquito.entitlements; sourceTree = "<group>"; };
 		C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C3D073C229A22D0F000A1494 /* Score+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+Extension.swift"; sourceTree = "<group>"; };
+		C3D073C229A22D0F000A1494 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		C3E3A21D299FD063001683A0 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
 		C3E3A220299FDC17001683A0 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		C3E3A222299FDD10001683A0 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
-		C3E3A224299FE593001683A0 /* Match+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Extension.swift"; sourceTree = "<group>"; };
+		C3E3A224299FE593001683A0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C3FDED68293C9129000B2039 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -67,9 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */,
-				C38EA1BD299FB81200FDC82A /* Player+Extension.swift */,
-				C3E3A224299FE593001683A0 /* Match+Extension.swift */,
-				C3D073C229A22D0F000A1494 /* Score+Extension.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -155,6 +152,9 @@
 		C3FDED6A293C9AB6000B2039 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				C38EA1BD299FB81200FDC82A /* Player.swift */,
+				C3E3A224299FE593001683A0 /* Match.swift */,
+				C3D073C229A22D0F000A1494 /* Score.swift */,
 				C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */,
 			);
 			path = Extensions;
@@ -243,7 +243,7 @@
 				C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */,
 				C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */,
 				C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */,
-				C38EA1BE299FB81200FDC82A /* Player+Extension.swift in Sources */,
+				C38EA1BE299FB81200FDC82A /* Player.swift in Sources */,
 				C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */,
 				C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */,
 				C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */,
@@ -251,12 +251,12 @@
 				C35DBB7B299AD18200C6E43A /* PlayerList.swift in Sources */,
 				C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */,
 				C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */,
-				C3E3A225299FE593001683A0 /* Match+Extension.swift in Sources */,
+				C3E3A225299FE593001683A0 /* Match.swift in Sources */,
 				C3FDED69293C9129000B2039 /* utils.swift in Sources */,
 				C32941F82933E21F00298ACC /* SettingsView.swift in Sources */,
 				C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */,
 				C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */,
-				C3D073C329A22D0F000A1494 /* Score+Extension.swift in Sources */,
+				C3D073C329A22D0F000A1494 /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
