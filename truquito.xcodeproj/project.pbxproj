@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		C316327B29354142005BBBCA /* Team.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316327A29354141005BBBCA /* Team.swift */; };
-		C316327D2935415D005BBBCA /* Score__DEPRECATEED.swift in Sources */ = {isa = PBXBuildFile; fileRef = C316327C2935415D005BBBCA /* Score__DEPRECATEED.swift */; };
 		C32941F82933E21F00298ACC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32941F72933E21F00298ACC /* SettingsView.swift */; };
 		C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */; };
 		C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB76299957C500C6E43A /* PersitenceController.swift */; };
@@ -21,21 +19,16 @@
 		C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12CF6292C3E4000DFC7DD /* GameView.swift */; };
 		C3A12CF9292C3E4100DFC7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */; };
 		C3A12CFD292C3E4100DFC7DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */; };
-		C3A12D04292C3E8700DFC7DD /* Match__DEPRECATED.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12D03292C3E8700DFC7DD /* Match__DEPRECATED.swift */; };
 		C3D073C329A22D0F000A1494 /* Score+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C229A22D0F000A1494 /* Score+Extension.swift */; };
 		C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A21D299FD063001683A0 /* MatchManager.swift */; };
 		C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A220299FDC17001683A0 /* Toolbar.swift */; };
 		C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A222299FDD10001683A0 /* PlayerScore.swift */; };
 		C3E3A225299FE593001683A0 /* Match+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match+Extension.swift */; };
-		C3FDED67293C8A36000B2039 /* GameStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED66293C8A36000B2039 /* GameStore.swift */; };
 		C3FDED69293C9129000B2039 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED68293C9129000B2039 /* utils.swift */; };
 		C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */; };
-		C3FDED75293CA113000B2039 /* GameViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED74293CA113000B2039 /* GameViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		C316327A29354141005BBBCA /* Team.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Team.swift; sourceTree = "<group>"; };
-		C316327C2935415D005BBBCA /* Score__DEPRECATEED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score__DEPRECATEED.swift; sourceTree = "<group>"; };
 		C32941F72933E21F00298ACC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C35DBB742999575C00C6E43A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C35DBB76299957C500C6E43A /* PersitenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersitenceController.swift; sourceTree = "<group>"; };
@@ -50,16 +43,13 @@
 		C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C3A12CFA292C3E4100DFC7DD /* truquito.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = truquito.entitlements; sourceTree = "<group>"; };
 		C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		C3A12D03292C3E8700DFC7DD /* Match__DEPRECATED.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match__DEPRECATED.swift; sourceTree = "<group>"; };
 		C3D073C229A22D0F000A1494 /* Score+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Score+Extension.swift"; sourceTree = "<group>"; };
 		C3E3A21D299FD063001683A0 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
 		C3E3A220299FDC17001683A0 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		C3E3A222299FDD10001683A0 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 		C3E3A224299FE593001683A0 /* Match+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Extension.swift"; sourceTree = "<group>"; };
-		C3FDED66293C8A36000B2039 /* GameStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = GameStore.swift; path = truquito/Managers/GameStore.swift; sourceTree = SOURCE_ROOT; };
 		C3FDED68293C9129000B2039 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
-		C3FDED74293CA113000B2039 /* GameViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -77,9 +67,6 @@
 			isa = PBXGroup;
 			children = (
 				C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */,
-				C3A12D03292C3E8700DFC7DD /* Match__DEPRECATED.swift */,
-				C316327A29354141005BBBCA /* Team.swift */,
-				C316327C2935415D005BBBCA /* Score__DEPRECATEED.swift */,
 				C38EA1BD299FB81200FDC82A /* Player+Extension.swift */,
 				C3E3A224299FE593001683A0 /* Match+Extension.swift */,
 				C3D073C229A22D0F000A1494 /* Score+Extension.swift */,
@@ -125,7 +112,6 @@
 		C3A12CF3292C3E4000DFC7DD /* truquito */ = {
 			isa = PBXGroup;
 			children = (
-				C3FDED74293CA113000B2039 /* GameViewModel.swift */,
 				C3FDED71293CA092000B2039 /* Managers */,
 				C3FDED6A293C9AB6000B2039 /* Extensions */,
 				C3A12D07292C402400DFC7DD /* Views */,
@@ -177,7 +163,6 @@
 		C3FDED71293CA092000B2039 /* Managers */ = {
 			isa = PBXGroup;
 			children = (
-				C3FDED66293C8A36000B2039 /* GameStore.swift */,
 				C35DBB76299957C500C6E43A /* PersitenceController.swift */,
 				C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */,
 				C3E3A21D299FD063001683A0 /* MatchManager.swift */,
@@ -255,11 +240,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3FDED67293C8A36000B2039 /* GameStore.swift in Sources */,
 				C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */,
 				C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */,
 				C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */,
-				C3FDED75293CA113000B2039 /* GameViewModel.swift in Sources */,
 				C38EA1BE299FB81200FDC82A /* Player+Extension.swift in Sources */,
 				C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */,
 				C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */,
@@ -272,11 +255,8 @@
 				C3FDED69293C9129000B2039 /* utils.swift in Sources */,
 				C32941F82933E21F00298ACC /* SettingsView.swift in Sources */,
 				C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */,
-				C316327B29354142005BBBCA /* Team.swift in Sources */,
-				C316327D2935415D005BBBCA /* Score__DEPRECATEED.swift in Sources */,
 				C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */,
 				C3D073C329A22D0F000A1494 /* Score+Extension.swift in Sources */,
-				C3A12D04292C3E8700DFC7DD /* Match__DEPRECATED.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
