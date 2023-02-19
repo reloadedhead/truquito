@@ -14,9 +14,19 @@ extension Match {
         
         self.beginDate = Date()
         self.endDate = nil
-        self.scoreA = Score(context: context, for: players[0])
-        self.scoreB = Score(context: context, for: players[1])
+        self.scoreData = NSOrderedSet(array: [
+            Score(context: context, for: players[0]),
+            Score(context: context, for: players[1])
+        ])
     }
     
-    var scores: [Score] { [self.scoreA!, self.scoreB!] }
+    var scores: [Score] {
+        get {
+            if let scores = self.scoreData {
+               return scores.array as? [Score] ?? []
+            } else { return [] as [Score] }
+        } set {
+            self.scoreData = NSOrderedSet(array: newValue)
+        }
+    }
 }

@@ -22,14 +22,14 @@ struct PlayerScore: View {
     }
     
         var body: some View {
-        VStack {
+            VStack {
             Text(player.name ?? "Unknown")
                 .font(.title2)
                 .bold()
             Text(score.value.formatted())
                 .font(.system(size: 92, design: .monospaced))
                 .bold().scaledToFit()
-        }
+            }
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,
