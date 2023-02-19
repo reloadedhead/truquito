@@ -14,7 +14,7 @@ struct SettingsView: View {
     var body: some View {
         NavigationView {
             List {
-                PlayerListView()
+                PlayerListPreview()
             }
             .navigationTitle("Configuración")
             .toolbar() {
