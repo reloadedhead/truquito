@@ -13,6 +13,8 @@ struct PlayerSettings: View {
     @State private var name: String
     @State private var color: Color
     
+    private var matchManager = MatchManager()
+    
     @Environment(\.presentationMode) var presentationMode
     
     var onDelete: (Player) -> Void
@@ -32,7 +34,9 @@ struct PlayerSettings: View {
     }
     
     var body: some View {
-        VStack {
+        let isPlaying = matchManager.isPlaying(player)
+        
+        return VStack {
             List {
                 Section("Nombre") {
                     TextField("Nombre", text: $name, onCommit: {
@@ -44,12 +48,14 @@ struct PlayerSettings: View {
                         player.color = newColor
                     }
                 }
+            
                 Button(action: { handleDelete() }) {
                     HStack {
                         Image(systemName: "trash")
                         Text("Borrar jugador")
                     }.tint(.red)
                 }
+                .disabled(isPlaying)
             }
         
             

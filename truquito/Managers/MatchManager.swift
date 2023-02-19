@@ -54,6 +54,10 @@ class MatchManager: ObservableObject {
 //        NOT IMPLEMENTED
     }
     
+    func isPlaying(_ player: Player) -> Bool {
+        return currentMatch.scores.first { $0.player == player } != nil
+    }
+    
     func reset() {
         currentMatch.endDate = Date()
         self.currentMatch = Match(context: context, players: Array(self.playerManager.players[..<2]))
