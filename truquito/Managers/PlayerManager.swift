@@ -13,13 +13,31 @@ class PlayerManager: ObservableObject {
     @Published var players: [Player] = []
     private let context = PersistenceController.shared.container.viewContext
     
-    func fetchAll() {
+    init() {
+        self.fetchPlayers()
+    }
+    
+    func fetchPlayers() {
         do {
-            self.players = try context.fetch(Player.fetchRequest())
+            let request: NSFetchRequest<Player> = Player.fetchRequest()
+            request.sortDescriptors = [
+                NSSortDescriptor(keyPath: \Player.name, ascending: true)
+            ]
+            players = try context.fetch(request)
+            
+            if (players.isEmpty) {
+                self.players = [
+                    Player(context: context, name: "Nosotros", color: .blue),
+                    Player(context: context, name: "Ellos", color: .yellow)
+                ]
+            } else {
+                self.players = players
+            }
         } catch {
             print("Error fetching players: \(error.localizedDescription)")
         }
     }
+
     
     func save() {
         do {

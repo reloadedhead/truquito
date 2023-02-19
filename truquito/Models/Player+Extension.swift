@@ -7,6 +7,7 @@
 
 import Foundation
 import SwiftUI
+import CoreData
 
 extension Color {
     var hexString: String? {
@@ -19,6 +20,12 @@ extension Color {
 }
 
 extension Player {
+    convenience init(context: NSManagedObjectContext, name: String, color: Color) {
+        self.init(context: context)
+        self.name = name
+        self.color = color
+    }
+    
     var color: Color {
         get {
             return Color(hex: self.colorString!)

@@ -1,45 +1,46 @@
 //
-//  TeamScoreView.swift
+//  PlayerScore.swift
 //  truquito
 //
-//  Created by Tomás García Gobet on 22.11.22.
+//  Created by Tomás García Gobet on 17.02.23.
 //
 
-import Foundation
 import SwiftUI
 
-struct TeamScoreView: View {
-    @EnvironmentObject var game: GameViewModel
+struct PlayerScore: View {
+    @ObservedObject var score: Score
+    @ObservedObject var player: Player
     
-    var score: Score
-    var onScore: (UUID, Int) -> Void
+    private let matchManager = MatchManager()
     
-    var team: Team {
-        game.teams.first(where: {$0.id == score.teamId}) ?? Team(name: "Placehoder")
+    func increase() { matchManager.score(for: score, value: 1)  }
+    func decrease() { matchManager.score(for: score, value: -1) }
+    
+    init(for score: Score) {
+        self.score = score
+        self.player = score.player!
     }
     
-    func increase() { onScore(team.id, 1)  }
-    func decrease() { onScore(team.id, -1)  }
-    
-    var body: some View {
-        VStack {
-            Text(team.name)
+        var body: some View {
+            VStack {
+            Text(player.name ?? "Unknown")
                 .font(.title2)
                 .bold()
             Text(score.value.formatted())
                 .font(.system(size: 92, design: .monospaced))
                 .bold().scaledToFit()
-        }
+            }
             .frame(
                 minWidth: 0,
                 maxWidth: .infinity,
                 minHeight: 0,
                 maxHeight: .infinity
             )
-            .background(team.color)
+            .background(score.player!.color)
             .contentShape(Rectangle())
             .onTapGesture { increase() }
             .gesture(DragGesture(minimumDistance: 5)
                 .onEnded({ _ in decrease() }))
     }
 }
+
