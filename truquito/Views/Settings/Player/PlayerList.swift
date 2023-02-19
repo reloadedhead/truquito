@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerListView: View {
-    @StateObject var playerManager = PlayerManager()
+    @ObservedObject private var playerManager = PlayerManager()
     
     var body: some View {
         Section("Jugadores") {
@@ -32,7 +32,7 @@ struct PlayerListView: View {
                 Text("Nuevo jugador")
             }
         }.onAppear {
-            playerManager.fetchAll()
+            playerManager.fetchPlayers()
         }
     }
 }
