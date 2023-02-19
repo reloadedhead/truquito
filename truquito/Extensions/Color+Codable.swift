@@ -32,14 +32,14 @@ extension Color: Codable {
   
   public func encode(to encoder: Encoder) throws {
     var container = encoder.singleValueContainer()
-    try container.encode(toHex)
+    try container.encode(hexValue)
   }
   
-  var toHex: String? {
+  var hexValue: String? {
     return toHex()
   }
   
-  func toHex(alpha: Bool = false) -> String? {
+  private func toHex(alpha: Bool = false) -> String? {
     guard let components = cgColor?.components, components.count >= 3 else {
       return nil
     }
