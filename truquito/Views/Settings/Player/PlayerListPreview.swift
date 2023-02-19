@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayerListView: View {
+struct PlayerListPreview: View {
     @ObservedObject private var playerManager = PlayerManager()
     
     var body: some View {
@@ -39,6 +39,6 @@ struct PlayerListView: View {
 
 struct PlayerListView_Previews: PreviewProvider {
     static var previews: some View {
-        PlayerListView()
+        PlayerListPreview()
     }
 }

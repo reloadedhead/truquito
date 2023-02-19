@@ -11,7 +11,7 @@
 		C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */; };
 		C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB76299957C500C6E43A /* PersitenceController.swift */; };
 		C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB78299AD15600C6E43A /* PlayerSettings.swift */; };
-		C35DBB7B299AD18200C6E43A /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7A299AD18200C6E43A /* PlayerList.swift */; };
+		C35DBB7B299AD18200C6E43A /* PlayerListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7A299AD18200C6E43A /* PlayerListPreview.swift */; };
 		C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */; };
 		C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */; };
 		C38EA1BE299FB81200FDC82A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BD299FB81200FDC82A /* Player.swift */; };
@@ -33,7 +33,7 @@
 		C35DBB742999575C00C6E43A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C35DBB76299957C500C6E43A /* PersitenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersitenceController.swift; sourceTree = "<group>"; };
 		C35DBB78299AD15600C6E43A /* PlayerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSettings.swift; sourceTree = "<group>"; };
-		C35DBB7A299AD18200C6E43A /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
+		C35DBB7A299AD18200C6E43A /* PlayerListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListPreview.swift; sourceTree = "<group>"; };
 		C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayer.swift; sourceTree = "<group>"; };
 		C38EA1BD299FB81200FDC82A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
@@ -84,7 +84,7 @@
 			isa = PBXGroup;
 			children = (
 				C35DBB78299AD15600C6E43A /* PlayerSettings.swift */,
-				C35DBB7A299AD18200C6E43A /* PlayerList.swift */,
+				C35DBB7A299AD18200C6E43A /* PlayerListPreview.swift */,
 				C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */,
 			);
 			path = Player;
@@ -248,7 +248,7 @@
 				C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */,
 				C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */,
 				C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */,
-				C35DBB7B299AD18200C6E43A /* PlayerList.swift in Sources */,
+				C35DBB7B299AD18200C6E43A /* PlayerListPreview.swift in Sources */,
 				C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */,
 				C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */,
 				C3E3A225299FE593001683A0 /* Match.swift in Sources */,
