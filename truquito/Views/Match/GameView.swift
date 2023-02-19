@@ -10,14 +10,7 @@ import SwiftUI
 struct GameView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    @StateObject private var game = GameViewModel()
-    
-    private let matchManager = MatchManager()
-    
-    func initialLoad() {
-        game.load()
-        matchManager.fetch()
-    }
+    @ObservedObject private var matchManager = MatchManager()
     
     let color = random()
     
@@ -26,19 +19,16 @@ struct GameView: View {
             Toolbar()
             
             VStack(spacing: 0) {
-                ForEach(game.match.scores, id: \.id) { currentTeamScore in
-                    TeamScoreView(score: currentTeamScore) {
-                        game.score(for: $0, $1)
-                    }
-                }.environmentObject(game)
+                ForEach(Array(matchManager.currentMatch.scores), id: \.id) { score in
+                    PlayerScore(for: score)
+                }
             }
         }
         .onLongPressGesture(minimumDuration: 1) {
-            game.reset()
+            matchManager.reset()
         }
         .onChange(of: scenePhase) { phase in
-            if phase == .inactive { game.save() }
+            if phase == .inactive { matchManager.save() }
         }
-        .onAppear { initialLoad() }
     }
 }
