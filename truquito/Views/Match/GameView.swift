@@ -10,16 +10,21 @@ import SwiftUI
 struct GameView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    @ObservedObject private var matchManager = MatchManager()
+    @StateObject var currentMatch: Match
+    private var matchManager: MatchManager
     
-    let color = random()
+    init() {
+        let manager = MatchManager()
+        self.matchManager = manager
+        _currentMatch = StateObject(wrappedValue: manager.currentMatch)
+    }
     
     var body: some View {
-        ZStack(alignment: .top) {
+        return ZStack(alignment: .top) {
             Toolbar()
             
             VStack(spacing: 0) {
-                ForEach(Array(matchManager.currentMatch.scores), id: \.id) { score in
+                ForEach(Array(currentMatch.scores), id: \.id) { score in
                     PlayerScore(for: score)
                 }
             }

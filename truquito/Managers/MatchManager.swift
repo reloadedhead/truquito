@@ -50,9 +50,15 @@ class MatchManager: ObservableObject {
         }
     }
     
-    func change(_ player: Player, for newPlayer: Player) {
-//        NOT IMPLEMENTED
+    func change(_ player: Player, for score: Score) {
+        if let scoreIndex = currentMatch.scores.firstIndex(of: score) {
+            let scores = currentMatch.scores
+            scores[scoreIndex].player = player
+            currentMatch.scores = scores
+            save()
+        }
     }
+
     
     func isPlaying(_ player: Player) -> Bool {
         return currentMatch.scores.first { $0.player == player } != nil
