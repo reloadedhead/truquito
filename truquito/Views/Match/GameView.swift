@@ -14,7 +14,7 @@ struct GameView: View {
     private var matchManager: MatchManager
     
     init() {
-        let manager = MatchManager()
+        let manager = MatchManager.shared
         self.matchManager = manager
         _currentMatch = StateObject(wrappedValue: manager.currentMatch)
     }

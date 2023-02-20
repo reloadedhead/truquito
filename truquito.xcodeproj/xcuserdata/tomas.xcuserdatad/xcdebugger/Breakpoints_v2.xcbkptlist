@@ -36,5 +36,53 @@
             landmarkType = "24">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "BC3634DF-316F-4D02-BCD2-C1E42DBC7E14"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "truquito/Views/Match/ChoosePlayerMenu.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "11"
+            endingLineNumber = "11"
+            landmarkName = "ChoosePlayerMenu"
+            landmarkType = "14">
+            <Locations>
+               <Location
+                  uuid = "BC3634DF-316F-4D02-BCD2-C1E42DBC7E14 - 1654965b4217f578"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "property wrapper backing initializer of truquito.ChoosePlayerMenu.manager : truquito.PlayerManager"
+                  moduleName = "truquito"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomas/Developer/truquito/truquito/Views/Match/ChoosePlayerMenu.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "28">
+               </Location>
+               <Location
+                  uuid = "BC3634DF-316F-4D02-BCD2-C1E42DBC7E14 - cd48196cfdc81485"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "truquito.ChoosePlayerMenu.init(currentPlayer: truquito.Player, onSelect: (truquito.Player) -&gt; ()) -&gt; truquito.ChoosePlayerMenu"
+                  moduleName = "truquito"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tomas/Developer/truquito/truquito/Views/Match/ChoosePlayerMenu.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "40">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>

@@ -8,8 +8,8 @@
 import SwiftUI
 
 struct ChoosePlayerMenu: View {
-    @ObservedObject private var manager = PlayerManager()
-    @ObservedObject private var matchManager = MatchManager()
+    @ObservedObject private var manager = PlayerManager.shared
+    @ObservedObject private var matchManager = MatchManager.shared
     
     let currentPlayer: Player
     var onSelect: (_ player: Player) -> Void
@@ -21,6 +21,6 @@ struct ChoosePlayerMenu: View {
                     Text(player.name ?? "Unknown")
                 }
             }
-        }
+        }.onAppear { manager.fetchPlayers() }
     }
 }

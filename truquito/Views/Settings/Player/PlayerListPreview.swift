@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct PlayerListPreview: View {
-    @ObservedObject private var playerManager = PlayerManager()
+    @ObservedObject private var playerManager = PlayerManager.shared
     
     var body: some View {
         Section("Jugadores") {

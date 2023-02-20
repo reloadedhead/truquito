@@ -13,7 +13,7 @@ struct PlayerSettings: View {
     @State private var name: String
     @State private var color: Color
     
-    private var matchManager = MatchManager()
+    private var matchManager = MatchManager.shared
     
     @Environment(\.presentationMode) var presentationMode
     

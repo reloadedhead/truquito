@@ -10,10 +10,12 @@ import SwiftUI
 import CoreData
 
 class PlayerManager: ObservableObject {
+    static let shared = PlayerManager()
+    
     @Published var players: [Player] = []
     private let context = PersistenceController.shared.container.viewContext
     
-    init() {
+    private init() {
         self.fetchPlayers()
     }
     
@@ -42,6 +44,7 @@ class PlayerManager: ObservableObject {
     func save() {
         do {
             try context.save()
+            self.fetchPlayers()
         } catch {
             print("Error saving player: \(error.localizedDescription)")
         }
