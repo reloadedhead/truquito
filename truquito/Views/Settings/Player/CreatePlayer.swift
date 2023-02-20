@@ -12,7 +12,7 @@ struct CreatePlayer: View {
     @State private var color: Color = .orange
     @Environment(\.presentationMode) var presentationMode
 
-    let playerManager = PlayerManager()
+    let playerManager = PlayerManager.shared
     
     func handleSave() {
         playerManager.add(name: name, color: color)

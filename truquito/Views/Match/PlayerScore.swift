@@ -13,7 +13,7 @@ struct PlayerScore: View {
     @Environment(\.colorScheme) private var colorScheme
     @State var isPresentingContextMenu = false
     
-    private let matchManager = MatchManager()
+    private let matchManager = MatchManager.shared
     
     func increase() { matchManager.score(for: score, value: 1)  }
     func decrease() { matchManager.score(for: score, value: -1) }

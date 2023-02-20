@@ -11,11 +11,14 @@ import CoreData
 class MatchManager: ObservableObject {
     @Published var matches: [Match]
     @Published var currentMatch: Match
-    private var playerManager = PlayerManager()
+    
+    static let shared = MatchManager()
+    
+    private var playerManager = PlayerManager.shared
     
     private let context = PersistenceController.shared.container.viewContext
     
-    init() {        
+    private init() {        
         let request: NSFetchRequest<Match> = Match.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "beginDate", ascending: false)]
         

@@ -10,14 +10,8 @@ import SwiftUI
 struct GameView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    @StateObject var currentMatch: Match
-    private var matchManager: MatchManager
-    
-    init() {
-        let manager = MatchManager()
-        self.matchManager = manager
-        _currentMatch = StateObject(wrappedValue: manager.currentMatch)
-    }
+    @ObservedObject private var matchManager = MatchManager.shared
+    @ObservedObject private var currentMatch = MatchManager.shared.currentMatch
     
     var body: some View {
         return ZStack(alignment: .top) {
