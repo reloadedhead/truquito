@@ -15,11 +15,16 @@ struct Toolbar: View {
         HStack {
             Spacer()
             Button(action: { isSettingsPresented.toggle() }) {
-                Image(systemName: "gear.circle.fill")
+                Image(systemName: "gear")
                     .resizable()
-                    .aspectRatio(contentMode: .fit)
-                    .frame(width: 40, height: 40)
+                    .frame(width: 28, height: 28)
                     .zIndex(1)
+                    .padding(8)
+                    .background(
+                        Circle()
+                            .fill(Color.clear)
+                            .background(BlurView(style: .systemThinMaterial).cornerRadius(100))
+                    )
             }
         }
         .padding()
