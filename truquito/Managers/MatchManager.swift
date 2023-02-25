@@ -69,7 +69,7 @@ class MatchManager: ObservableObject {
     
     func reset() {
         currentMatch.endDate = Date()
-        self.currentMatch = Match(context: context, players: Array(self.playerManager.players[..<2]))
+        self.currentMatch = Match(context: context, players: currentMatch.players)
         
         save()
     }
