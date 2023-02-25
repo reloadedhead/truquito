@@ -10,10 +10,42 @@ import SwiftUI
 struct Toolbar: View {
     @State private var isSettingsPresented = false
     @Environment(\.colorScheme) private var colorScheme
-    @StateObject var matchManager = MatchManager.shared
+    @ObservedObject private var currentMatch = MatchManager.shared.currentMatch
+    
+    private let matchManager = MatchManager.shared
+    var target: Int {
+        currentMatch.target
+    }
     
     var body: some View {
         HStack {
+            Menu(content: {
+                Section("Seleccioná un objetivo") {
+                    ForEach(Targets.allCases, id: \.self) { option in
+                            Button(action: { matchManager.change(target: option.rawValue) }) { Text("Jugar a \(option.rawValue)")
+                        }
+                    }
+                }
+            }) {
+                HStack {
+                    Image(systemName: "target")
+                    Text("\(target)")
+                        .font(.title3)
+                        .padding(2)
+                }
+                .padding(8)
+                .background(
+                    RoundedRectangle(cornerRadius: 14)
+                        .fill(Color.clear)
+                        .background(
+                            BlurView(style: .systemThinMaterial)
+                                .cornerRadius(14)
+                        )
+                )
+                
+            }
+            .tint(colorScheme == .dark ? .white : .black)
+            
             Spacer()
             Button(action: { matchManager.reset() }) {
                 Image(systemName: "arrow.counterclockwise.circle")
@@ -50,9 +82,3 @@ struct Toolbar: View {
         }
 
     }}
-
-struct Toolbar_Previews: PreviewProvider {
-    static var previews: some View {
-        Toolbar()
-    }
-}
