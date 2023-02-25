@@ -20,6 +20,11 @@ extension Match {
         ])
     }
     
+    var target: Int {
+        get { Int(self.targetData) }
+        set { self.targetData = Int16(newValue) }
+    }
+    
     var scores: [Score] {
         get {
             if let scores = self.scoreData {

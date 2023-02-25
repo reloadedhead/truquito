@@ -42,7 +42,7 @@ class MatchManager: ObservableObject {
     }
     
     private func canScore(_ currentScore: Int, _ addition: Int) -> Bool {
-        currentScore + addition >= 0 && currentScore + addition <= 30
+        currentScore + addition >= 0 && currentScore + addition <= self.currentMatch.target
         
     }
     
@@ -60,6 +60,11 @@ class MatchManager: ObservableObject {
             currentMatch.scores = scores
             save()
         }
+    }
+    
+    func change(target: Int) {
+        currentMatch.target = target
+        save()
     }
 
     
