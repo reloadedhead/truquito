@@ -10,10 +10,23 @@ import SwiftUI
 struct Toolbar: View {
     @State private var isSettingsPresented = false
     @Environment(\.colorScheme) private var colorScheme
+    @StateObject var matchManager = MatchManager.shared
     
     var body: some View {
         HStack {
             Spacer()
+            Button(action: { matchManager.reset() }) {
+                Image(systemName: "arrow.counterclockwise.circle")
+                    .resizable()
+                    .frame(width: 28, height: 28)
+                    .zIndex(1)
+                    .padding(8)
+                    .background(
+                        Circle()
+                            .fill(Color.clear)
+                            .background(BlurView(style: .systemThinMaterial).cornerRadius(100))
+                    )
+            }
             Button(action: { isSettingsPresented.toggle() }) {
                 Image(systemName: "gear")
                     .resizable()
