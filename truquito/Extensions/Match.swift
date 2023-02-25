@@ -29,4 +29,6 @@ extension Match {
             self.scoreData = NSOrderedSet(array: newValue)
         }
     }
+    
+    var players: [Player] { self.scores.map { $0.player! } }
 }

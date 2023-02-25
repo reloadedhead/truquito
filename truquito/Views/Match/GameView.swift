@@ -23,9 +23,6 @@ struct GameView: View {
                 }
             }
         }
-        .onLongPressGesture(minimumDuration: 1) {
-            matchManager.reset()
-        }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { matchManager.save() }
         }.onChange(of: matchManager.currentMatch) { _ in
