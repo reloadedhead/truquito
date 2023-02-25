@@ -10,8 +10,8 @@ import SwiftUI
 struct GameView: View {
     @Environment(\.scenePhase) private var scenePhase
     
-    @ObservedObject private var matchManager = MatchManager.shared
-    @ObservedObject private var currentMatch = MatchManager.shared.currentMatch
+    @StateObject private var matchManager = MatchManager.shared
+    @State private var currentMatch = MatchManager.shared.currentMatch
     
     var body: some View {
         return ZStack(alignment: .top) {
@@ -28,6 +28,8 @@ struct GameView: View {
         }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { matchManager.save() }
+        }.onChange(of: matchManager.currentMatch) { _ in
+            currentMatch = matchManager.currentMatch
         }
     }
 }
