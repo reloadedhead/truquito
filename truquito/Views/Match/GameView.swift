@@ -12,15 +12,19 @@ struct GameView: View {
     
     @StateObject private var matchManager = MatchManager.shared
     @State private var currentMatch = MatchManager.shared.currentMatch
+    @AppStorage("isSharedModeOn") private var isSharedModeOn = false
+    
+    func rotation(index: Int) -> Angle { index == 0 && isSharedModeOn ? Angle(degrees: 180) : .zero }
     
     var body: some View {
         return ZStack(alignment: .top) {
             Toolbar()
             
             VStack(spacing: 0) {
-                ForEach(Array(currentMatch.scores), id: \.id) { score in
+                ForEach(Array(currentMatch.scores.enumerated()), id: \.element.id) { index, score in
                     PlayerScore(for: score)
-                }
+                        .rotationEffect(rotation(index: index))
+                }.edgesIgnoringSafeArea(.all)
             }
         }
         .onChange(of: scenePhase) { phase in
