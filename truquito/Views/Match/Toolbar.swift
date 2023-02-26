@@ -45,6 +45,7 @@ struct Toolbar: View {
                 
             }
             .tint(colorScheme == .dark ? .white : .black)
+            .onTapGesture {}
             
             Spacer()
             Button(action: { matchManager.reset() }) {
