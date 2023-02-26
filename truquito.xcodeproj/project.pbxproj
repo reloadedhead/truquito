@@ -27,6 +27,7 @@
 		C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A222299FDD10001683A0 /* PlayerScore.swift */; };
 		C3E3A225299FE593001683A0 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match.swift */; };
 		C3FA285129A3F22700FF0358 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA285029A3F22700FF0358 /* BlurView.swift */; };
+		C3FA285429AA298A00FF0358 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA285329AA298A00FF0358 /* Targets.swift */; };
 		C3FDED69293C9129000B2039 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED68293C9129000B2039 /* utils.swift */; };
 		C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */; };
 /* End PBXBuildFile section */
@@ -54,6 +55,7 @@
 		C3E3A222299FDD10001683A0 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
 		C3E3A224299FE593001683A0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C3FA285029A3F22700FF0358 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
+		C3FA285329AA298A00FF0358 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
 		C3FDED68293C9129000B2039 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -116,6 +118,7 @@
 		C3A12CF3292C3E4000DFC7DD /* truquito */ = {
 			isa = PBXGroup;
 			children = (
+				C3FA285229AA297B00FF0358 /* Enums */,
 				C3FDED71293CA092000B2039 /* Managers */,
 				C3FDED6A293C9AB6000B2039 /* Extensions */,
 				C3A12D07292C402400DFC7DD /* Views */,
@@ -164,6 +167,14 @@
 				C3FA285029A3F22700FF0358 /* BlurView.swift */,
 			);
 			path = "Utility views";
+			sourceTree = "<group>";
+		};
+		C3FA285229AA297B00FF0358 /* Enums */ = {
+			isa = PBXGroup;
+			children = (
+				C3FA285329AA298A00FF0358 /* Targets.swift */,
+			);
+			path = Enums;
 			sourceTree = "<group>";
 		};
 		C3FDED6A293C9AB6000B2039 /* Extensions */ = {
@@ -267,6 +278,7 @@
 				C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */,
 				C35DBB7B299AD18200C6E43A /* PlayerListPreview.swift in Sources */,
 				C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */,
+				C3FA285429AA298A00FF0358 /* Targets.swift in Sources */,
 				C3D073C529A28B5B000A1494 /* PlayerList.swift in Sources */,
 				C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */,
 				C3E3A225299FE593001683A0 /* Match.swift in Sources */,
