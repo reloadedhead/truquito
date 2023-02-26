@@ -11,7 +11,7 @@ import UIKit
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
     @Environment(\.managedObjectContext) var viewContext
-    
+    @AppStorage("isSharedModeOn") private var isSharedModeOn = false
     @State var isIdleTimerDisabled = UIApplication.shared.isIdleTimerDisabled
 
     var body: some View {
@@ -23,6 +23,10 @@ struct SettingsView: View {
                         Toggle("Prevenir bloqueo", isOn: $isIdleTimerDisabled).onChange(of: isIdleTimerDisabled) { value in
                             UIApplication.shared.isIdleTimerDisabled = value
                         }
+                }
+                
+                Section(footer: Text("Da vuelta el puntaje superior para compartir la el puntaje.")) {
+                    Toggle("Modo compartido", isOn: $isSharedModeOn)
                 }
                 PlayerListPreview()
             }
