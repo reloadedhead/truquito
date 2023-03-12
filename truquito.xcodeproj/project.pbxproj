@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		C32941F82933E21F00298ACC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32941F72933E21F00298ACC /* SettingsView.swift */; };
+		C3331E0029BDD9D400284BD7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3331DFF29BDD9D400284BD7 /* SplashView.swift */; };
 		C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */; };
 		C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB76299957C500C6E43A /* PersitenceController.swift */; };
 		C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB78299AD15600C6E43A /* PlayerSettings.swift */; };
@@ -34,6 +35,7 @@
 
 /* Begin PBXFileReference section */
 		C32941F72933E21F00298ACC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		C3331DFF29BDD9D400284BD7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C35DBB742999575C00C6E43A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C35DBB76299957C500C6E43A /* PersitenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersitenceController.swift; sourceTree = "<group>"; };
 		C35DBB78299AD15600C6E43A /* PlayerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSettings.swift; sourceTree = "<group>"; };
@@ -86,6 +88,14 @@
 				C32941F72933E21F00298ACC /* SettingsView.swift */,
 			);
 			path = Settings;
+			sourceTree = "<group>";
+		};
+		C3331DFC29BDD9AF00284BD7 /* Splash */ = {
+			isa = PBXGroup;
+			children = (
+				C3331DFF29BDD9D400284BD7 /* SplashView.swift */,
+			);
+			path = Splash;
 			sourceTree = "<group>";
 		};
 		C38EA1BA299F927700FDC82A /* Player */ = {
@@ -143,6 +153,7 @@
 		C3A12D07292C402400DFC7DD /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				C3331DFC29BDD9AF00284BD7 /* Splash */,
 				C3FA284F29A3F20E00FF0358 /* Utility views */,
 				C3E3A21F299FDBFA001683A0 /* Match */,
 				C32941FD2933FD7700298ACC /* Settings */,
@@ -269,6 +280,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */,
+				C3331E0029BDD9D400284BD7 /* SplashView.swift in Sources */,
 				C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */,
 				C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */,
 				C38EA1BE299FB81200FDC82A /* Player.swift in Sources */,
