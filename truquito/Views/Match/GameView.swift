@@ -12,7 +12,9 @@ struct GameView: View {
     
     @StateObject private var matchManager = MatchManager.shared
     @State private var currentMatch = MatchManager.shared.currentMatch
+    @State private var isSplashViewPresented = false
     @AppStorage("isSharedModeOn") private var isSharedModeOn = false
+    @AppStorage("isFirstLaunch") private var isFirstLaunch = true
     
     func rotation(index: Int) -> Angle { index == 0 && isSharedModeOn ? Angle(degrees: 180) : .zero }
     
@@ -27,10 +29,18 @@ struct GameView: View {
                 }.edgesIgnoringSafeArea(.all)
             }
         }
+        .sheet(isPresented: $isSplashViewPresented) {
+            SplashView()
+        }
         .onChange(of: scenePhase) { phase in
             if phase == .inactive { matchManager.save() }
         }.onChange(of: matchManager.currentMatch) { _ in
             currentMatch = matchManager.currentMatch
+        }.onAppear {
+            if isFirstLaunch {
+                isSplashViewPresented.toggle()
+                isFirstLaunch.toggle()
+            }
         }
     }
 }
