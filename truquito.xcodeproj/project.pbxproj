@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		C302DF4029BE09E900631AC0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DF3F29BE09E900631AC0 /* AboutView.swift */; };
+		C302DF4229BE11E600631AC0 /* ExternalLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */; };
 		C32941F82933E21F00298ACC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32941F72933E21F00298ACC /* SettingsView.swift */; };
 		C3331E0029BDD9D400284BD7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3331DFF29BDD9D400284BD7 /* SplashView.swift */; };
 		C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */; };
@@ -34,6 +36,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		C302DF3F29BE09E900631AC0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
+		C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkView.swift; sourceTree = "<group>"; };
 		C32941F72933E21F00298ACC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C3331DFF29BDD9D400284BD7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		C35DBB742999575C00C6E43A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
@@ -73,6 +77,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		C302DF3E29BE09C400631AC0 /* About */ = {
+			isa = PBXGroup;
+			children = (
+				C302DF3F29BE09E900631AC0 /* AboutView.swift */,
+				C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
 		C31632792935412F005BBBCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -84,6 +97,7 @@
 		C32941FD2933FD7700298ACC /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				C302DF3E29BE09C400631AC0 /* About */,
 				C38EA1BA299F927700FDC82A /* Player */,
 				C32941F72933E21F00298ACC /* SettingsView.swift */,
 			);
@@ -292,6 +306,7 @@
 				C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */,
 				C3FA285429AA298A00FF0358 /* Targets.swift in Sources */,
 				C3D073C529A28B5B000A1494 /* PlayerList.swift in Sources */,
+				C302DF4029BE09E900631AC0 /* AboutView.swift in Sources */,
 				C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */,
 				C3E3A225299FE593001683A0 /* Match.swift in Sources */,
 				C3D073C729A2DEB3000A1494 /* ChoosePlayerMenu.swift in Sources */,
@@ -299,6 +314,7 @@
 				C32941F82933E21F00298ACC /* SettingsView.swift in Sources */,
 				C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */,
 				C3FA285129A3F22700FF0358 /* BlurView.swift in Sources */,
+				C302DF4229BE11E600631AC0 /* ExternalLinkView.swift in Sources */,
 				C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */,
 				C3D073C329A22D0F000A1494 /* Score.swift in Sources */,
 			);
