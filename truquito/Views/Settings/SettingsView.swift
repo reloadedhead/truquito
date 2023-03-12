@@ -25,7 +25,7 @@ struct SettingsView: View {
                         }
                 }
                 
-                Section(footer: Text("Da vuelta el puntaje superior para compartir la el puntaje.")) {
+                Section(footer: Text("Da vuelta el puntaje superior para compartir el puntaje.")) {
                     Toggle("Modo compartido", isOn: $isSharedModeOn)
                 }
                 PlayerListPreview()
