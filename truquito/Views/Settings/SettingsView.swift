@@ -28,7 +28,14 @@ struct SettingsView: View {
                 Section(footer: Text("Da vuelta el puntaje superior para compartir el puntaje.")) {
                     Toggle("Modo compartido", isOn: $isSharedModeOn)
                 }
+                
                 PlayerListPreview()
+                
+                Section() {
+                    NavigationLink(destination: AboutView()) {
+                        Text("Acerca de")
+                    }
+                }
             }
             .navigationTitle("Configuración")
             .toolbar() {
