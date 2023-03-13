@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct ExternalLinkView: View {
+    @Environment(\.colorScheme) private var colorScheme
+    
     var url: String
     var symbolName: String
     var label: String
@@ -22,7 +24,7 @@ struct ExternalLinkView: View {
                     .cornerRadius(5)
                     .foregroundColor(Color.white)
                 Text(label)
-                    .foregroundColor(.black)
+                    .foregroundColor(colorScheme == .dark ? .white : .black)
                 Spacer()
          
                 Image(systemName: "arrow.up.forward.app")
