@@ -15,9 +15,9 @@ struct PlayerScore: View {
     
     private let matchManager = MatchManager.shared
     
-    func increase() { matchManager.score(for: score, value: 1)  }
-    func decrease() { matchManager.score(for: score, value: -1) }
-    func handleSelectPlayer(_ player: Player) { matchManager.change(player, for: score) }
+    private func increase() { matchManager.score(for: score, value: 1)  }
+    private func decrease() { matchManager.score(for: score, value: -1) }
+    private func handleSelectPlayer(_ player: Player) { matchManager.change(player, for: score) }
     
     init(for score: Score) {
         self.score = score
@@ -27,7 +27,7 @@ struct PlayerScore: View {
         var body: some View {
             VStack(alignment: .center, spacing: 0) {
                 Menu(content: {
-                    ChoosePlayerMenu(currentPlayer: player, onSelect: handleSelectPlayer)
+                    ChoosePlayerMenu(onSelect: handleSelectPlayer)
                 }) {
                     Text(player.name ?? "Unknown")
                         .font(.title2)

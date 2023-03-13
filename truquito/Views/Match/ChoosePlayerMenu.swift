@@ -11,7 +11,6 @@ struct ChoosePlayerMenu: View {
     @ObservedObject private var manager = PlayerManager.shared
     @ObservedObject private var matchManager = MatchManager.shared
     
-    let currentPlayer: Player
     var onSelect: (_ player: Player) -> Void
     
     var body: some View {
