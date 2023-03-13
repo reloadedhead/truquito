@@ -33,9 +33,29 @@ class MatchManager: ObservableObject {
         }
     }
     
+    private func fetch() {
+        do {
+            let request: NSFetchRequest<Match> = Match.fetchRequest()
+            request.sortDescriptors = [NSSortDescriptor(key: "beginDate", ascending: false)]
+            
+            let results = try context.fetch(request)
+            
+            if !results.isEmpty {
+                self.matches = results
+                self.currentMatch = results[0]
+            } else {
+                self.matches = []
+                self.currentMatch = Match(context: context, players: Array(self.playerManager.players[..<2]))
+            }
+        } catch {
+            print("Error fetching matches!")
+        }
+    }
+    
     func save() {
         do {
             try context.save()
+            self.fetch()
         } catch {
             print("Error saving player: \(error.localizedDescription)")
         }
