@@ -9,6 +9,7 @@ import SwiftUI
 
 struct PlayerScore: View {
     @ObservedObject var score: Score
+    @ObservedObject var player: Player
     @Environment(\.colorScheme) private var colorScheme
     @State var isPresentingContextMenu = false
     
@@ -20,11 +21,8 @@ struct PlayerScore: View {
     
     init(for score: Score) {
         self.score = score
+        self.player = score.player!
     }
-    
-    var player: Player {
-          score.player!
-      }
     
         var body: some View {
             VStack(alignment: .center, spacing: 0) {
