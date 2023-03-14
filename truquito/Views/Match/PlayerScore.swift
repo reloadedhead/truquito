@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct PlayerScore: View {
+struct ScoreView: View {
     @ObservedObject var score: Score
     @ObservedObject var player: Player
     @Environment(\.colorScheme) private var colorScheme
