@@ -16,18 +16,22 @@ struct GameView: View {
     @AppStorage("isSharedModeOn") private var isSharedModeOn = false
     @AppStorage("isFirstLaunch") private var isFirstLaunch = true
     
-    func rotation(index: Int) -> Angle { index == 0 && isSharedModeOn ? Angle(degrees: 180) : .zero }
+    private func rotation(index: Int) -> Angle { index == 0 && isSharedModeOn ? Angle(degrees: 180) : .zero }
+    private func align(scoreIn index: Int) -> Alignment { index == 0 ? .bottom : .top }
     
     var body: some View {
-        return ZStack(alignment: .top) {
+        ZStack(alignment: .top) {
             Toolbar()
             
             VStack(spacing: 0) {
                 ForEach(Array(currentMatch.scores.enumerated()), id: \.element.id) { index, score in
-                    ScoreView(for: score)
-                        .rotationEffect(rotation(index: index))
-                }.edgesIgnoringSafeArea(.all)
-            }
+                    ZStack(alignment: align(scoreIn: index)) {
+                        ScoreView(for: score)
+                            .rotationEffect(rotation(index: index))
+                        ProgressBar(color: score.player!.color, value: score.value)
+                    }
+                }
+            }.edgesIgnoringSafeArea(.all)
         }
         .sheet(isPresented: $isSplashViewPresented) {
             SplashView()
