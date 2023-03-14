@@ -24,7 +24,7 @@ struct GameView: View {
             
             VStack(spacing: 0) {
                 ForEach(Array(currentMatch.scores.enumerated()), id: \.element.id) { index, score in
-                    PlayerScore(for: score)
+                    ScoreView(for: score)
                         .rotationEffect(rotation(index: index))
                 }.edgesIgnoringSafeArea(.all)
             }

@@ -27,7 +27,7 @@
 		C3D073C729A2DEB3000A1494 /* ChoosePlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C629A2DEB3000A1494 /* ChoosePlayerMenu.swift */; };
 		C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A21D299FD063001683A0 /* MatchManager.swift */; };
 		C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A220299FDC17001683A0 /* Toolbar.swift */; };
-		C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A222299FDD10001683A0 /* PlayerScore.swift */; };
+		C3E3A223299FDD10001683A0 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A222299FDD10001683A0 /* ScoreView.swift */; };
 		C3E3A225299FE593001683A0 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match.swift */; };
 		C3FA285129A3F22700FF0358 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA285029A3F22700FF0358 /* BlurView.swift */; };
 		C3FA285429AA298A00FF0358 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA285329AA298A00FF0358 /* Targets.swift */; };
@@ -58,7 +58,7 @@
 		C3D073C629A2DEB3000A1494 /* ChoosePlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerMenu.swift; sourceTree = "<group>"; };
 		C3E3A21D299FD063001683A0 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
 		C3E3A220299FDC17001683A0 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
-		C3E3A222299FDD10001683A0 /* PlayerScore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerScore.swift; sourceTree = "<group>"; };
+		C3E3A222299FDD10001683A0 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
 		C3E3A224299FE593001683A0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C3FA285029A3F22700FF0358 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		C3FA285329AA298A00FF0358 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
@@ -180,7 +180,7 @@
 			children = (
 				C3A12CF6292C3E4000DFC7DD /* GameView.swift */,
 				C3E3A220299FDC17001683A0 /* Toolbar.swift */,
-				C3E3A222299FDD10001683A0 /* PlayerScore.swift */,
+				C3E3A222299FDD10001683A0 /* ScoreView.swift */,
 				C3D073C629A2DEB3000A1494 /* ChoosePlayerMenu.swift */,
 			);
 			path = Match;
@@ -307,7 +307,7 @@
 				C3FA285429AA298A00FF0358 /* Targets.swift in Sources */,
 				C3D073C529A28B5B000A1494 /* PlayerList.swift in Sources */,
 				C302DF4029BE09E900631AC0 /* AboutView.swift in Sources */,
-				C3E3A223299FDD10001683A0 /* PlayerScore.swift in Sources */,
+				C3E3A223299FDD10001683A0 /* ScoreView.swift in Sources */,
 				C3E3A225299FE593001683A0 /* Match.swift in Sources */,
 				C3D073C729A2DEB3000A1494 /* ChoosePlayerMenu.swift in Sources */,
 				C3FDED69293C9129000B2039 /* utils.swift in Sources */,
