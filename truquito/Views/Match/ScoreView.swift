@@ -45,18 +45,18 @@ struct ScoreView: View {
                 Text(score.value.formatted())
                     .font(.system(size: 92, design: .monospaced))
                     .bold().scaledToFit()
-            }
-            .frame(
-                minWidth: 0,
-                maxWidth: .infinity,
-                minHeight: 0,
-                maxHeight: .infinity
-            )
-            .background(score.player!.color)
-            .contentShape(Rectangle())
-            .onTapGesture { increase() }
-            .gesture(DragGesture(minimumDistance: 5)
-                .onEnded({ _ in decrease() }))
-    }
+                }
+                .frame(
+                    minWidth: 0,
+                    maxWidth: .infinity,
+                    minHeight: 0,
+                    maxHeight: .infinity
+                )
+                .background(score.player!.color)
+                .contentShape(Rectangle())
+                .onTapGesture { increase() }
+                .gesture(DragGesture(minimumDistance: 5)
+                    .onEnded({ _ in decrease() }))
+        }
 }
 
