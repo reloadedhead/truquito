@@ -264,7 +264,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
-				Base,
+				"es-419",
 			);
 			mainGroup = C3A12CE8292C3E4000DFC7DD;
 			productRefGroup = C3A12CF2292C3E4000DFC7DD /* Products */;
@@ -483,7 +483,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"truquito/Preview Content\"";
-				DEVELOPMENT_TEAM = SS5BPUUU83;
+				DEVELOPMENT_TEAM = Q2U37Y95QK;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
