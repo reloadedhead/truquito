@@ -12,10 +12,18 @@ import CoreData
 class PlayerManager: ObservableObject {
     static let shared = PlayerManager()
     
-    @Published var players: [Player] = []
-    private let context = PersistenceController.shared.container.viewContext
+    static let preview = PlayerManager(inMemory: true)
     
-    private init() {
+    @Published var players: [Player] = []
+    private let context: NSManagedObjectContext
+    
+    private init(inMemory: Bool = false) {
+        if inMemory {
+            self.context = PersistenceController.preview.container.viewContext
+        } else {
+            self.context = PersistenceController.shared.container.viewContext
+        }
+        
         self.fetchPlayers()
     }
     
