@@ -61,7 +61,7 @@ struct Toolbar: View {
                     )
             }
             Button(action: { isSettingsPresented.toggle() }) {
-                Image(systemName: "gear")
+                Image(systemName: "ellipsis.circle")
                     .resizable()
                     .frame(width: 28, height: 28)
                     .zIndex(1)
