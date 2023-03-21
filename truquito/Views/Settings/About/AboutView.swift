@@ -23,7 +23,7 @@ struct AboutView: View {
                     ExternalLinkView(url: ProjectUrl, symbolName: "checklist", label: "Roadmap", color: .yellow)
                     ExternalLinkView(url: BugReportUrl, symbolName: "ladybug.fill", label: "Reportar un bug", color: .red)
                     ExternalLinkView(url: FeatureUrl, symbolName: "wand.and.stars", label: "Solicitar una idea", color: .green)
-                    ExternalLinkView(url: FeatureUrl, symbolName: "heart.fill", label: "Dejar una reseña", color: .red)
+                    ExternalLinkView(url: AppStoreUrl, symbolName: "heart.fill", label: "Dejar una reseña", color: .red)
                 }
                 
                 Section(header: Text("Developer"), footer: Text("¡Con amor, amargo y retruco!")) {
