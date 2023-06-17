@@ -11,7 +11,7 @@ let GitHubUrl = "https://github.com/reloadedhead/truquito"
 let ProjectUrl = "https://github.com/users/reloadedhead/projects/1"
 let BugReportUrl = "https://github.com/reloadedhead/truquito/issues/new?assignees=&labels=&template=bug_report.md&title="
 let FeatureUrl = "https://github.com/reloadedhead/truquito/issues/new?assignees=&labels=&template=feature_request.md&title="
-let AppStoreUrl = "https://appstore.com/reloadedhead/truquito"
+let AppStoreUrl = "https://apps.apple.com/app/id6446289622"
 
 let TwitterUrl = "https://twitter.com/reloadedhead"
 
