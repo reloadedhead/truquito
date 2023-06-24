@@ -35,6 +35,7 @@ struct PlayerSettings: View {
     
     var body: some View {
         let isPlaying = matchManager.isPlaying(player)
+        let matches = matchManager.matches(of: player)
         
         return VStack {
             List {
@@ -46,6 +47,18 @@ struct PlayerSettings: View {
                 Section("Color") {
                     ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false).onChange(of: color) { newColor in
                         player.color = newColor
+                    }
+                }
+                
+                Section("Historial") {
+                    ForEach(matches.prefix(3)) { match in
+                        HistoryRow(match: match, player: player)
+                    }
+                    
+                    if matches.count > 3 {
+                        NavigationLink(destination: HistoryView(matches: matches, player: player)) {
+                            Text("Ver más...")
+                        }
                     }
                 }
             
@@ -61,5 +74,13 @@ struct PlayerSettings: View {
             
         }
         .navigationTitle(player.name ?? "").onDisappear { onSave() }
+    }
+}
+
+struct PlayerSettingsView_Previews: PreviewProvider {
+    static var previews: some View {
+        let player = PlayerManager.shared.players[0]
+        
+        PlayerSettings(player: player, onDelete: {_ in }, onSave: {})
     }
 }

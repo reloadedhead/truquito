@@ -18,9 +18,17 @@ struct PersistenceController {
         
         let playerA = Player(context: controller.container.viewContext)
         playerA.name = "Nosotros"
+        playerA.colorString = "123456"
         
         let playerB = Player(context: controller.container.viewContext)
-        playerA.name = "Ellos"
+        playerB.name = "Ellos"
+        playerB.colorString = "123456"
+        
+        let finishedMatch = Match(context: controller.container.viewContext, players: [playerA, playerB])
+        finishedMatch.beginDate = Date(timeIntervalSinceNow: -1200)
+        finishedMatch.endDate = Date()
+        
+        let currentMatch  = Match(context: controller.container.viewContext, players: [playerA, playerB])
         
         return controller
     }()

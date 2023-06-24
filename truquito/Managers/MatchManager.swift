@@ -13,12 +13,19 @@ class MatchManager: ObservableObject {
     @Published var currentMatch: Match
     
     static let shared = MatchManager()
+    static let preview = MatchManager(inMemory: true)
     
     private var playerManager = PlayerManager.shared
     
-    private let context = PersistenceController.shared.container.viewContext
+    private let context: NSManagedObjectContext
     
-    private init() {        
+    private init(inMemory: Bool = false) {
+        if inMemory {
+            self.context = PersistenceController.preview.container.viewContext
+        } else {
+            self.context = PersistenceController.shared.container.viewContext
+        }
+        
         let request: NSFetchRequest<Match> = Match.fetchRequest()
         request.sortDescriptors = [NSSortDescriptor(key: "beginDate", ascending: false)]
         
@@ -85,6 +92,10 @@ class MatchManager: ObservableObject {
     func change(target: Int) {
         currentMatch.target = target
         save()
+    }
+    
+    func matches(of player: Player) -> [Match] {
+        return self.matches.filter { $0.players.contains(where: { $0 == player }) }
     }
 
     
