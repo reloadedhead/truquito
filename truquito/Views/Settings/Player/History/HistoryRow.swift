@@ -32,7 +32,7 @@ struct HistoryRow: View {
             Text("\(scores[0].value) - \(scores[1].value) contra \(adversary?.name ?? "jugador eliminado")")
             Spacer()
             if didWin() {
-                Image(systemName: "trophy.circle.fill").foregroundColor(.yellow)
+                Image(systemName: "medal").foregroundColor(.yellow)
             }
         }
     }
@@ -41,6 +41,8 @@ struct HistoryRow: View {
 struct HistoryRow_Previews: PreviewProvider {
     static var previews: some View {
         let manager = MatchManager.shared
-        HistoryRow(match: manager.currentMatch, player: manager.currentMatch.scores[0].player!)
+        return List {
+            HistoryRow(match: manager.currentMatch, player: manager.currentMatch.scores[0].player!)
+        }
     }
 }
