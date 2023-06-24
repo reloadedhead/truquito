@@ -93,6 +93,10 @@ class MatchManager: ObservableObject {
         currentMatch.target = target
         save()
     }
+    
+    func matches(of player: Player) -> [Match] {
+        return self.matches.filter { $0.players.contains(where: { $0 == player }) }
+    }
 
     
     func isPlaying(_ player: Player) -> Bool {
