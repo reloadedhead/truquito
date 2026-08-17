@@ -8,14 +8,13 @@
 import SwiftUI
 
 struct ProgressBar: View {
-    @ObservedObject var currentMatch = MatchManager.shared.currentMatch
-    
     var color: Color
     var value: Int
-    
+    var target: Int
+
     var body: some View {
-        let percentage = Double(value) / Double(currentMatch.target)
-        
+        let percentage = Double(value) / Double(target)
+
         return GeometryReader { geometry in
             Rectangle()
                 .foregroundColor(color)
@@ -32,7 +31,7 @@ struct ProgressBar_Previews: PreviewProvider {
     static var previews: some View {
         ZStack {
             Color.red
-            ProgressBar(color: .red, value: 15)
+            ProgressBar(color: .red, value: 15, target: 30)
         }
     }
 }

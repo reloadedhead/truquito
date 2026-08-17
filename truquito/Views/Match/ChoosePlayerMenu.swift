@@ -6,20 +6,21 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct ChoosePlayerMenu: View {
-    @ObservedObject private var manager = PlayerManager.shared
-    @ObservedObject private var matchManager = MatchManager.shared
-    
+    @Query(sort: \Player.name) private var players: [Player]
+
+    var match: Match
     var onSelect: (_ player: Player) -> Void
-    
+
     var body: some View {
         Section("Cambiar jugador") {
-            ForEach(manager.players.filter { !matchManager.isPlaying($0) }) { player in
+            ForEach(players.filter { player in !match.scores.contains { $0.player == player } }) { player in
                 Button(action: { onSelect(player) }) {
-                    Text(player.name ?? "Unknown")
+                    Text(player.name)
                 }
             }
-        }.onAppear { manager.fetchPlayers() }
+        }
     }
 }

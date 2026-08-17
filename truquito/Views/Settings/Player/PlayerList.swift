@@ -6,27 +6,20 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PlayerList: View {
-    @ObservedObject private var playerManager: PlayerManager
-    
-    init(managedBy manager: PlayerManager) {
-        self.playerManager = manager
-    }
-    
+    @Query(sort: \Player.name) private var players: [Player]
+
     var body: some View {
         List {
-            ForEach(playerManager.players) { player in
-                NavigationLink(destination: PlayerSettings(
-                    player: player,
-                    onDelete: playerManager.delete,
-                    onSave: playerManager.save))
-                {
+            ForEach(players) { player in
+                NavigationLink(destination: PlayerSettings(player: player)) {
                     HStack {
                         Image(systemName: "person.circle.fill")
                             .frame(width: 10)
                             .foregroundColor(player.color)
-                        Text(player.name ?? "Unknown")
+                        Text(player.name)
                         Spacer()
                     }
                 }
@@ -38,6 +31,5 @@ struct PlayerList: View {
                 Image(systemName: "plus")
             }
         }
-        .onAppear { playerManager.fetchPlayers() }
     }
 }

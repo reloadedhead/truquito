@@ -6,33 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PlayerListPreview: View {
-    @ObservedObject private var playerManager = PlayerManager.shared
-    
+    @Query(sort: \Player.name) private var players: [Player]
+
     var body: some View {
         Section("Jugadores") {
-            ForEach(playerManager.players.prefix(3)) { player in
-                NavigationLink(destination: PlayerSettings(
-                    player: player,
-                    onDelete: playerManager.delete,
-                    onSave: playerManager.save))
-                {
+            ForEach(players.prefix(3)) { player in
+                NavigationLink(destination: PlayerSettings(player: player)) {
                     HStack {
                         Image(systemName: "person.circle.fill")
                             .frame(width: 10)
                             .foregroundColor(player.color)
-                        Text(player.name ?? "Unknown")
+                        Text(player.name)
                         Spacer()
                     }
                 }
             }
-            
-            NavigationLink(destination: PlayerList(managedBy: playerManager)) {
+
+            NavigationLink(destination: PlayerList()) {
                 Text("Ver más...")
             }
-        }.onAppear {
-            playerManager.fetchPlayers()
         }
     }
 }
@@ -40,5 +35,6 @@ struct PlayerListPreview: View {
 struct PlayerListView_Previews: PreviewProvider {
     static var previews: some View {
         PlayerListPreview()
+            .modelContainer(PersistenceController.preview)
     }
 }

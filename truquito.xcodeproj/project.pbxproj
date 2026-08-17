@@ -7,33 +7,33 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		297CED78C09A779D0B1DE2C9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC68C71B360F9F5BFA9BFA /* Player.swift */; };
+		49D18A51500A2E59A89883A1 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FF9FBCB19791BB34963EF /* Score.swift */; };
+		9170B8F6CB537AD80DC8E204 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E843BCFC17B8EBF20CD1DA0 /* Match.swift */; };
 		C302DF4029BE09E900631AC0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DF3F29BE09E900631AC0 /* AboutView.swift */; };
 		C302DF4229BE11E600631AC0 /* ExternalLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */; };
 		C32941F82933E21F00298ACC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32941F72933E21F00298ACC /* SettingsView.swift */; };
 		C3331E0029BDD9D400284BD7 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3331DFF29BDD9D400284BD7 /* SplashView.swift */; };
-		C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */; };
 		C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB76299957C500C6E43A /* PersitenceController.swift */; };
 		C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB78299AD15600C6E43A /* PlayerSettings.swift */; };
 		C35DBB7B299AD18200C6E43A /* PlayerListPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7A299AD18200C6E43A /* PlayerListPreview.swift */; };
-		C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */; };
 		C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */; };
-		C38EA1BE299FB81200FDC82A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BD299FB81200FDC82A /* Player.swift */; };
+		C38EA1BE299FB81200FDC82A /* Player+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = C38EA1BD299FB81200FDC82A /* Player+Color.swift */; };
 		C3A12CF5292C3E4000DFC7DD /* truquitoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12CF4292C3E4000DFC7DD /* truquitoApp.swift */; };
 		C3A12CF7292C3E4000DFC7DD /* GameView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3A12CF6292C3E4000DFC7DD /* GameView.swift */; };
 		C3A12CF9292C3E4100DFC7DD /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CF8292C3E4100DFC7DD /* Assets.xcassets */; };
 		C3A12CFD292C3E4100DFC7DD /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */; };
 		C3B2644D29C05F7C00ACAB53 /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3B2644C29C05F7C00ACAB53 /* ProgressBar.swift */; };
+		C3BC30F03033558F00CB2C9A /* TruquitoIcon.icon in Resources */ = {isa = PBXBuildFile; fileRef = C3BC30EF3033558F00CB2C9A /* TruquitoIcon.icon */; };
 		C3C84CEC2A470AD00033440E /* HistoryRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C84CE82A470AD00033440E /* HistoryRow.swift */; };
 		C3C84CED2A470AD00033440E /* FilterButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C84CE92A470AD00033440E /* FilterButton.swift */; };
 		C3C84CEE2A470AD00033440E /* Filter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C84CEA2A470AD00033440E /* Filter.swift */; };
 		C3C84CEF2A470AD00033440E /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3C84CEB2A470AD00033440E /* HistoryView.swift */; };
-		C3D073C329A22D0F000A1494 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C229A22D0F000A1494 /* Score.swift */; };
 		C3D073C529A28B5B000A1494 /* PlayerList.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C429A28B5B000A1494 /* PlayerList.swift */; };
 		C3D073C729A2DEB3000A1494 /* ChoosePlayerMenu.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3D073C629A2DEB3000A1494 /* ChoosePlayerMenu.swift */; };
-		C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A21D299FD063001683A0 /* MatchManager.swift */; };
 		C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A220299FDC17001683A0 /* Toolbar.swift */; };
 		C3E3A223299FDD10001683A0 /* ScoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A222299FDD10001683A0 /* ScoreView.swift */; };
-		C3E3A225299FE593001683A0 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match.swift */; };
+		C3E3A225299FE593001683A0 /* Match+Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3E3A224299FE593001683A0 /* Match+Player.swift */; };
 		C3FA285129A3F22700FF0358 /* BlurView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA285029A3F22700FF0358 /* BlurView.swift */; };
 		C3FA285429AA298A00FF0358 /* Targets.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FA285329AA298A00FF0358 /* Targets.swift */; };
 		C3FDED69293C9129000B2039 /* utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = C3FDED68293C9129000B2039 /* utils.swift */; };
@@ -41,17 +41,17 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		585FF9FBCB19791BB34963EF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
+		5E843BCFC17B8EBF20CD1DA0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
 		C302DF3F29BE09E900631AC0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkView.swift; sourceTree = "<group>"; };
 		C32941F72933E21F00298ACC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C3331DFF29BDD9D400284BD7 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
-		C35DBB742999575C00C6E43A /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
 		C35DBB76299957C500C6E43A /* PersitenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersitenceController.swift; sourceTree = "<group>"; };
 		C35DBB78299AD15600C6E43A /* PlayerSettings.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerSettings.swift; sourceTree = "<group>"; };
 		C35DBB7A299AD18200C6E43A /* PlayerListPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerListPreview.swift; sourceTree = "<group>"; };
-		C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerManager.swift; sourceTree = "<group>"; };
 		C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayer.swift; sourceTree = "<group>"; };
-		C38EA1BD299FB81200FDC82A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		C38EA1BD299FB81200FDC82A /* Player+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Player+Color.swift"; sourceTree = "<group>"; };
 		C3A12CF1292C3E4000DFC7DD /* truquito.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = truquito.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3A12CF4292C3E4000DFC7DD /* truquitoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = truquitoApp.swift; sourceTree = "<group>"; };
 		C3A12CF6292C3E4000DFC7DD /* GameView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameView.swift; sourceTree = "<group>"; };
@@ -59,21 +59,21 @@
 		C3A12CFA292C3E4100DFC7DD /* truquito.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = truquito.entitlements; sourceTree = "<group>"; };
 		C3A12CFC292C3E4100DFC7DD /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		C3B2644C29C05F7C00ACAB53 /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
+		C3BC30EF3033558F00CB2C9A /* TruquitoIcon.icon */ = {isa = PBXFileReference; lastKnownFileType = folder.iconcomposer.icon; path = TruquitoIcon.icon; sourceTree = "<group>"; };
 		C3C84CE82A470AD00033440E /* HistoryRow.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryRow.swift; sourceTree = "<group>"; };
 		C3C84CE92A470AD00033440E /* FilterButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilterButton.swift; sourceTree = "<group>"; };
 		C3C84CEA2A470AD00033440E /* Filter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Filter.swift; sourceTree = "<group>"; };
 		C3C84CEB2A470AD00033440E /* HistoryView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
-		C3D073C229A22D0F000A1494 /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		C3D073C429A28B5B000A1494 /* PlayerList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerList.swift; sourceTree = "<group>"; };
 		C3D073C629A2DEB3000A1494 /* ChoosePlayerMenu.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChoosePlayerMenu.swift; sourceTree = "<group>"; };
-		C3E3A21D299FD063001683A0 /* MatchManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatchManager.swift; sourceTree = "<group>"; };
 		C3E3A220299FDC17001683A0 /* Toolbar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Toolbar.swift; sourceTree = "<group>"; };
 		C3E3A222299FDD10001683A0 /* ScoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreView.swift; sourceTree = "<group>"; };
-		C3E3A224299FE593001683A0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		C3E3A224299FE593001683A0 /* Match+Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Match+Player.swift"; sourceTree = "<group>"; };
 		C3FA285029A3F22700FF0358 /* BlurView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlurView.swift; sourceTree = "<group>"; };
 		C3FA285329AA298A00FF0358 /* Targets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Targets.swift; sourceTree = "<group>"; };
 		C3FDED68293C9129000B2039 /* utils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utils.swift; sourceTree = "<group>"; };
 		C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Color+Codable.swift"; sourceTree = "<group>"; };
+		EDCC68C71B360F9F5BFA9BFA /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,7 +99,9 @@
 		C31632792935412F005BBBCA /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */,
+				EDCC68C71B360F9F5BFA9BFA /* Player.swift */,
+				5E843BCFC17B8EBF20CD1DA0 /* Match.swift */,
+				585FF9FBCB19791BB34963EF /* Score.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -163,6 +165,7 @@
 				C3A12CFB292C3E4100DFC7DD /* Preview Content */,
 				C31632792935412F005BBBCA /* Models */,
 				C3FDED68293C9129000B2039 /* utils.swift */,
+				C3BC30EF3033558F00CB2C9A /* TruquitoIcon.icon */,
 			);
 			path = truquito;
 			sourceTree = "<group>";
@@ -228,9 +231,8 @@
 		C3FDED6A293C9AB6000B2039 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				C38EA1BD299FB81200FDC82A /* Player.swift */,
-				C3E3A224299FE593001683A0 /* Match.swift */,
-				C3D073C229A22D0F000A1494 /* Score.swift */,
+				C38EA1BD299FB81200FDC82A /* Player+Color.swift */,
+				C3E3A224299FE593001683A0 /* Match+Player.swift */,
 				C3FDED6B293C9AC3000B2039 /* Color+Codable.swift */,
 			);
 			path = Extensions;
@@ -240,8 +242,6 @@
 			isa = PBXGroup;
 			children = (
 				C35DBB76299957C500C6E43A /* PersitenceController.swift */,
-				C35DBB7C299EC9B700C6E43A /* PlayerManager.swift */,
-				C3E3A21D299FD063001683A0 /* MatchManager.swift */,
 			);
 			path = Managers;
 			sourceTree = "<group>";
@@ -305,6 +305,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3A12CFD292C3E4100DFC7DD /* Preview Assets.xcassets in Resources */,
+				C3BC30F03033558F00CB2C9A /* TruquitoIcon.icon in Resources */,
 				C3A12CF9292C3E4100DFC7DD /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,19 +323,19 @@
 				C3C84CEF2A470AD00033440E /* HistoryView.swift in Sources */,
 				C35DBB79299AD15600C6E43A /* PlayerSettings.swift in Sources */,
 				C38EA1BC299F95A200FDC82A /* CreatePlayer.swift in Sources */,
-				C38EA1BE299FB81200FDC82A /* Player.swift in Sources */,
+				C38EA1BE299FB81200FDC82A /* Player+Color.swift in Sources */,
 				C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */,
-				C35DBB7D299EC9B700C6E43A /* PlayerManager.swift in Sources */,
-				C35DBB752999575C00C6E43A /* truquito.xcdatamodeld in Sources */,
+				297CED78C09A779D0B1DE2C9 /* Player.swift in Sources */,
+				9170B8F6CB537AD80DC8E204 /* Match.swift in Sources */,
+				49D18A51500A2E59A89883A1 /* Score.swift in Sources */,
 				C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */,
 				C35DBB7B299AD18200C6E43A /* PlayerListPreview.swift in Sources */,
-				C3E3A21E299FD063001683A0 /* MatchManager.swift in Sources */,
 				C3FA285429AA298A00FF0358 /* Targets.swift in Sources */,
 				C3D073C529A28B5B000A1494 /* PlayerList.swift in Sources */,
 				C302DF4029BE09E900631AC0 /* AboutView.swift in Sources */,
 				C3E3A223299FDD10001683A0 /* ScoreView.swift in Sources */,
 				C3C84CEC2A470AD00033440E /* HistoryRow.swift in Sources */,
-				C3E3A225299FE593001683A0 /* Match.swift in Sources */,
+				C3E3A225299FE593001683A0 /* Match+Player.swift in Sources */,
 				C3D073C729A2DEB3000A1494 /* ChoosePlayerMenu.swift in Sources */,
 				C3FDED69293C9129000B2039 /* utils.swift in Sources */,
 				C32941F82933E21F00298ACC /* SettingsView.swift in Sources */,
@@ -344,7 +345,6 @@
 				C302DF4229BE11E600631AC0 /* ExternalLinkView.swift in Sources */,
 				C3FDED6C293C9AC3000B2039 /* Color+Codable.swift in Sources */,
 				C3B2644D29C05F7C00ACAB53 /* ProgressBar.swift in Sources */,
-				C3D073C329A22D0F000A1494 /* Score.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -463,7 +463,7 @@
 		C3A12D01292C3E4100DFC7DD /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = TruquitoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = truquito/truquito.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -485,12 +485,12 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.reloadedhead.truquito;
+				PRODUCT_BUNDLE_IDENTIFIER = ar.gobet.truquito;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SDKROOT = auto;
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -505,7 +505,7 @@
 		C3A12D02292C3E4100DFC7DD /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = TruquitoIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = truquito/truquito.entitlements;
 				CODE_SIGN_STYLE = Automatic;
@@ -527,7 +527,7 @@
 				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
 				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
 				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 13.0;
@@ -566,19 +566,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		C35DBB732999575C00C6E43A /* truquito.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				C35DBB742999575C00C6E43A /* Model.xcdatamodel */,
-			);
-			currentVersion = C35DBB742999575C00C6E43A /* Model.xcdatamodel */;
-			path = truquito.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = C3A12CE9292C3E4000DFC7DD /* Project object */;
 }

@@ -8,18 +8,19 @@
 import SwiftUI
 
 struct CreatePlayer: View {
-    @State private var name: String = ""
-    @State private var color: Color = .orange
+    @Environment(\.modelContext) private var context
     @Environment(\.presentationMode) var presentationMode
 
-    let playerManager = PlayerManager.shared
-    
+    @State private var name: String = ""
+    @State private var color: Color = .orange
+
     func handleSave() {
-        playerManager.add(name: name, color: color)
-        
+        let player = Player(name: name, color: color)
+        context.insert(player)
+
         self.presentationMode.wrappedValue.dismiss()
     }
-    
+
     var body: some View {
         VStack {
             List {
@@ -30,8 +31,8 @@ struct CreatePlayer: View {
                     ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false)
                 }
             }
-        
-            
+
+
         }
         .navigationTitle(name.isEmpty ? "Nuevo jugador" : name).toolbar {
             Button("Agregar") { handleSave() }

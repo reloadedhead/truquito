@@ -6,23 +6,28 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct Toolbar: View {
+    var currentMatch: Match
+
+    @Environment(\.modelContext) private var context
     @State private var isSettingsPresented = false
     @Environment(\.colorScheme) private var colorScheme
-    @ObservedObject private var currentMatch = MatchManager.shared.currentMatch
-    
-    private let matchManager = MatchManager.shared
-    var target: Int {
-        currentMatch.target
+
+    var target: Int { currentMatch.target }
+
+    private func reset() {
+        currentMatch.endDate = Date()
+        context.insert(Match(players: currentMatch.players))
     }
-    
+
     var body: some View {
         HStack {
             Menu(content: {
                 Section("Seleccioná un objetivo") {
                     ForEach(Targets.allCases, id: \.self) { option in
-                            Button(action: { matchManager.change(target: option.rawValue) }) { Text("Jugar a \(option.rawValue)")
+                            Button(action: { currentMatch.target = option.rawValue }) { Text("Jugar a \(option.rawValue)")
                         }
                     }
                 }
@@ -42,13 +47,13 @@ struct Toolbar: View {
                                 .cornerRadius(14)
                         )
                 )
-                
+
             }
             .tint(colorScheme == .dark ? .white : .black)
             .onTapGesture {}
-            
+
             Spacer()
-            Button(action: { matchManager.reset() }) {
+            Button(action: { reset() }) {
                 Image(systemName: "arrow.counterclockwise.circle")
                     .resizable()
                     .frame(width: 28, height: 28)

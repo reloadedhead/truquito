@@ -6,81 +6,75 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct PlayerSettings: View {
-    @ObservedObject var player: Player
-    
+    var player: Player
+
+    @Environment(\.modelContext) private var context
+    @Environment(\.presentationMode) var presentationMode
+    @Query(sort: \Match.beginDate, order: .reverse) private var allMatches: [Match]
+
     @State private var name: String
     @State private var color: Color
-    
-    private var matchManager = MatchManager.shared
-    
-    @Environment(\.presentationMode) var presentationMode
-    
-    var onDelete: (Player) -> Void
-    var onSave: () -> Void
-    
-    init(player: Player, onDelete: @escaping (Player) -> Void, onSave: @escaping () -> Void) {
+
+    init(player: Player) {
         self.player = player
-        self.onSave = onSave
-        self.onDelete = onDelete
-        _name = State(initialValue: player.name ?? "")
+        _name = State(initialValue: player.name)
         _color = State(initialValue: player.color)
     }
-    
+
+    private var matches: [Match] { allMatches.filter { $0.players.contains(player) } }
+    private var isPlaying: Bool { allMatches.first?.players.contains(player) ?? false }
+
     func handleDelete() {
-        onDelete(player)
+        context.delete(player)
         self.presentationMode.wrappedValue.dismiss()
     }
-    
+
     var body: some View {
-        let isPlaying = matchManager.isPlaying(player)
-        let matches = matchManager.matches(of: player)
-        
-        return VStack {
-            List {
-                Section("Nombre") {
-                    TextField("Nombre", text: $name, onCommit: {
-                        player.name = name
-                    })
-                }
-                Section("Color") {
-                    ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false).onChange(of: color) { newColor in
-                        player.color = newColor
-                    }
-                }
-                
-                Section("Historial") {
-                    ForEach(matches.prefix(3)) { match in
-                        HistoryRow(match: match, player: player)
-                    }
-                    
-                    if matches.count > 3 {
-                        NavigationLink(destination: HistoryView(matches: matches, player: player)) {
-                            Text("Ver más...")
-                        }
-                    }
-                }
-            
-                Button(action: { handleDelete() }) {
-                    HStack {
-                        Image(systemName: "trash")
-                        Text("Borrar jugador")
-                    }.tint(.red)
-                }
-                .disabled(isPlaying)
+        List {
+            Section("Nombre") {
+                TextField("Nombre", text: $name, onCommit: {
+                    player.name = name
+                })
             }
-        
-            
+            Section("Color") {
+                ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false).onChange(of: color) { newColor in
+                    player.color = newColor
+                }
+            }
+
+            Section("Historial") {
+                ForEach(matches.prefix(3)) { match in
+                    HistoryRow(match: match, player: player)
+                }
+
+                if matches.count > 3 {
+                    NavigationLink(destination: HistoryView(matches: matches, player: player)) {
+                        Text("Ver más...")
+                    }
+                }
+            }
+
+            Button(action: { handleDelete() }) {
+                HStack {
+                    Image(systemName: "trash")
+                    Text("Borrar jugador")
+                }.tint(.red)
+            }
+            .disabled(isPlaying)
         }
-        .navigationTitle(player.name ?? "").onDisappear { onSave() }
+        .navigationTitle(player.name)
     }
 }
 
 struct PlayerSettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        let player = PlayerManager.shared.players[0]
-        
-        PlayerSettings(player: player, onDelete: {_ in }, onSave: {})
+        let context = PersistenceController.preview.mainContext
+        let player = try! context.fetch(FetchDescriptor<Player>(sortBy: [SortDescriptor(\.name)])).first!
+
+        PlayerSettings(player: player)
+            .modelContainer(PersistenceController.preview)
     }
 }

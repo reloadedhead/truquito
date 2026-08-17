@@ -6,10 +6,11 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HistoryRow: View {
-    @ObservedObject var match: Match
-    @ObservedObject var player: Player
+    var match: Match
+    var player: Player
     
     private func didWin() -> Bool {
         if let winningScore = match.scores.first(where: { $0.player == player }) {
@@ -40,9 +41,13 @@ struct HistoryRow: View {
 
 struct HistoryRow_Previews: PreviewProvider {
     static var previews: some View {
-        let manager = MatchManager.shared
+        let context = PersistenceController.preview.mainContext
+        let match = try! context.fetch(FetchDescriptor<Match>(sortBy: [SortDescriptor(\.beginDate, order: .reverse)])).first!
+        let player = match.scores[0].player!
+
         return List {
-            HistoryRow(match: manager.currentMatch, player: manager.currentMatch.scores[0].player!)
+            HistoryRow(match: match, player: player)
         }
+        .modelContainer(PersistenceController.preview)
     }
 }

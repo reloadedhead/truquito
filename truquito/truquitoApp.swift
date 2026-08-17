@@ -6,17 +6,14 @@
 //
 
 import SwiftUI
+import SwiftData
 
 @main
 struct truquitoApp: App {
-    @Environment(\.scenePhase) var scenePhase
-    
-    let persistenceController = PersistenceController.shared
     var body: some Scene {
         WindowGroup {
-            GameView().environment(\.managedObjectContext, persistenceController.container.viewContext)
-        }.onChange(of: scenePhase) { _ in
-            persistenceController.save()
+            GameView()
         }
+        .modelContainer(PersistenceController.shared)
     }
 }

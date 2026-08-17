@@ -10,7 +10,6 @@ import UIKit
 
 struct SettingsView: View {
     @Environment(\.dismiss) var dismiss
-    @Environment(\.managedObjectContext) var viewContext
     @AppStorage("isSharedModeOn") private var isSharedModeOn = false
     @State var isIdleTimerDisabled = UIApplication.shared.isIdleTimerDisabled
 

@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct HistoryView: View {
     var matches: [Match]
@@ -52,6 +53,11 @@ struct HistoryView: View {
 
 struct HistoryView_Previews: PreviewProvider {
     static var previews: some View {
-        HistoryView(matches: MatchManager.shared.matches, player: PlayerManager.shared.players[0])
+        let context = PersistenceController.preview.mainContext
+        let matches = try! context.fetch(FetchDescriptor<Match>(sortBy: [SortDescriptor(\.beginDate, order: .reverse)]))
+        let player = try! context.fetch(FetchDescriptor<Player>(sortBy: [SortDescriptor(\.name)])).first!
+
+        return HistoryView(matches: matches, player: player)
+            .modelContainer(PersistenceController.preview)
     }
 }

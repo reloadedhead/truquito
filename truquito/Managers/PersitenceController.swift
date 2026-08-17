@@ -6,56 +6,45 @@
 //
 
 import Foundation
-import CoreData
+import SwiftUI
+import SwiftData
 
-struct PersistenceController {
-    static let shared = PersistenceController()
-    
-    let container: NSPersistentCloudKitContainer
-    
-    static var preview: PersistenceController = {
-        let controller = PersistenceController(inMemory: true)
-        
-        let playerA = Player(context: controller.container.viewContext)
-        playerA.name = "Nosotros"
-        playerA.colorString = "123456"
-        
-        let playerB = Player(context: controller.container.viewContext)
-        playerB.name = "Ellos"
-        playerB.colorString = "123456"
-        
-        let finishedMatch = Match(context: controller.container.viewContext, players: [playerA, playerB])
-        finishedMatch.beginDate = Date(timeIntervalSinceNow: -1200)
-        finishedMatch.endDate = Date()
-        
-        let currentMatch  = Match(context: controller.container.viewContext, players: [playerA, playerB])
-        
-        return controller
-    }()
-    
-    init(inMemory: Bool = false) {
-        container = NSPersistentCloudKitContainer(name: "truquito")
-        
-        if inMemory {
-            container.persistentStoreDescriptions.first?.url = URL(fileURLWithPath: "/dev/null")
-        }
-        
-        container.loadPersistentStores { description, error in
-            if let error = error {
-                fatalError("Error: \(error.localizedDescription)")
-            }
+@MainActor
+enum PersistenceController {
+    static let shared = makeContainer(inMemory: false)
+    static let preview = makePreviewContainer()
+
+    private static func makeContainer(inMemory: Bool) -> ModelContainer {
+        // To enable CloudKit sync, add the iCloud/CloudKit capability in Signing & Capabilities
+        // (which provisions the container for this target's bundle ID), then pass
+        // cloudKitDatabase: .automatic here.
+        let schema = Schema([Player.self, Match.self, Score.self])
+        let configuration = ModelConfiguration(schema: schema, isStoredInMemoryOnly: inMemory)
+
+        do {
+            return try ModelContainer(for: schema, configurations: [configuration])
+        } catch {
+            fatalError("Error: \(error.localizedDescription)")
         }
     }
-    
-    func save() {
-        let context = container.viewContext
-        
-        if context.hasChanges {
-            do {
-                try context.save()
-            } catch {
-                print("Error saving context!")
-            }
-        }
+
+    private static func makePreviewContainer() -> ModelContainer {
+        let container = makeContainer(inMemory: true)
+        let context = container.mainContext
+
+        let playerA = Player(name: "Nosotros", color: .blue)
+        let playerB = Player(name: "Ellos", color: .yellow)
+        context.insert(playerA)
+        context.insert(playerB)
+
+        let finishedMatch = Match(players: [playerA, playerB])
+        finishedMatch.beginDate = Date(timeIntervalSinceNow: -1200)
+        finishedMatch.endDate = Date()
+        context.insert(finishedMatch)
+
+        let currentMatch = Match(players: [playerA, playerB])
+        context.insert(currentMatch)
+
+        return container
     }
 }
