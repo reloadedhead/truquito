@@ -16,14 +16,26 @@ struct ProgressBar: View {
         let percentage = Double(value) / Double(target)
 
         return GeometryReader { geometry in
-            Rectangle()
-                .foregroundColor(color)
-                .shadow(color: color, radius: 10)
-                .frame(width: geometry.size.width * CGFloat(percentage) )
-                .animation(.linear, value: percentage)
-                .blendMode(.multiply)
+            if #available(iOS 26.0, *) {
+                Capsule()
+                    .fill(color)
+                    .frame(width: geometry.size.width * CGFloat(percentage))
+                    .glassEffect(.regular.tint(color), in: Capsule())
+                    .overlay(
+                        Capsule().strokeBorder(.white.opacity(0.6), lineWidth: 1.5)
+                    )
+                    .shadow(color: .black.opacity(0.25), radius: 6, y: 3)
+                    .animation(.linear, value: percentage)
+            } else {
+                Rectangle()
+                    .foregroundColor(color)
+                    .shadow(color: color, radius: 10)
+                    .frame(width: geometry.size.width * CGFloat(percentage) )
+                    .animation(.linear, value: percentage)
+                    .blendMode(.multiply)
+            }
         }
-        .frame(height: 8)
+        .frame(height: 20)
     }
 }
 
