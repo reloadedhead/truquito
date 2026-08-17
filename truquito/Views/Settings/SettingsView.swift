@@ -19,8 +19,8 @@ struct SettingsView: View {
                 Section(
                     header: Text("General"),
                     footer: Text("Al activarse, Truquito va a prevenir que la pantalla de tu dispositivo se apague mientras la aplicación esté abierta.")) {
-                        Toggle("Prevenir bloqueo", isOn: $isIdleTimerDisabled).onChange(of: isIdleTimerDisabled) { value in
-                            UIApplication.shared.isIdleTimerDisabled = value
+                        Toggle("Prevenir bloqueo", isOn: $isIdleTimerDisabled).onChange(of: isIdleTimerDisabled) {
+                            UIApplication.shared.isIdleTimerDisabled = isIdleTimerDisabled
                         }
                 }
                 
