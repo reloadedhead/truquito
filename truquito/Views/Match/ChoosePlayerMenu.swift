@@ -10,17 +10,30 @@ import SwiftData
 
 struct ChoosePlayerMenu: View {
     @Query(sort: \Player.name) private var players: [Player]
+    @Environment(\.colorScheme) private var colorScheme
 
     var match: Match
-    var onSelect: (_ player: Player) -> Void
+    var score: Score
+
+    private var availablePlayers: [Player] {
+        let others = Set(match.scores.filter { $0 !== score }.compactMap { $0.player })
+        return players.filter { !others.contains($0) }
+    }
 
     var body: some View {
-        Section("Cambiar jugador") {
-            ForEach(players.filter { player in !match.scores.contains { $0.player == player } }) { player in
-                Button(action: { onSelect(player) }) {
-                    Text(player.name)
-                }
+        Picker(selection: Binding(
+            get: { score.player },
+            set: { score.player = $0 }
+        )) {
+            ForEach(availablePlayers) { player in
+                Text(player.name).tag(player as Player?)
             }
+        } label: {
+            Text(score.player?.name ?? "Unknown")
         }
+        .pickerStyle(.menu)
+        .font(.title2)
+        .tint(colorScheme == .dark ? .white : .black)
+        .onTapGesture {}
     }
 }

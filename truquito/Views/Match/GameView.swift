@@ -14,6 +14,7 @@ struct GameView: View {
     @Query(sort: \Player.name) private var players: [Player]
 
     @State private var isSplashViewPresented = false
+    @State private var isSettingsPresented = false
     @AppStorage("isSharedModeOn") private var isSharedModeOn = false
     @AppStorage("isFirstLaunch") private var isFirstLaunch = true
 
@@ -21,11 +22,9 @@ struct GameView: View {
     private func align(scoreIn index: Int) -> Alignment { index == 0 ? .bottom : .top }
 
     var body: some View {
-        Group {
-            if let currentMatch = matches.first {
-                ZStack(alignment: .top) {
-                    Toolbar(currentMatch: currentMatch)
-
+        NavigationStack {
+            Group {
+                if let currentMatch = matches.first {
                     VStack(spacing: 0) {
                         ForEach(Array(currentMatch.scores.enumerated()), id: \.element.id) { index, score in
                             ZStack(alignment: align(scoreIn: index)) {
@@ -34,12 +33,20 @@ struct GameView: View {
                                 ProgressBar(color: score.player?.color ?? .gray, value: score.value, target: currentMatch.target)
                             }
                         }
-                    }.edgesIgnoringSafeArea(.all)
+                    }
+                    .edgesIgnoringSafeArea(.all)
+                    .toolbar {
+                        Toolbar(currentMatch: currentMatch, isSettingsPresented: $isSettingsPresented)
+                    }
                 }
             }
+            .toolbarBackground(.hidden, for: .navigationBar)
         }
         .sheet(isPresented: $isSplashViewPresented) {
             SplashView()
+        }
+        .sheet(isPresented: $isSettingsPresented) {
+            SettingsView()
         }
         .onAppear {
             seedIfNeeded()

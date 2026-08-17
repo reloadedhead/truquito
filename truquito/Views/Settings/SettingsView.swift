@@ -19,8 +19,8 @@ struct SettingsView: View {
                 Section(
                     header: Text("General"),
                     footer: Text("Al activarse, Truquito va a prevenir que la pantalla de tu dispositivo se apague mientras la aplicación esté abierta.")) {
-                        Toggle("Prevenir bloqueo", isOn: $isIdleTimerDisabled).onChange(of: isIdleTimerDisabled) {
-                            UIApplication.shared.isIdleTimerDisabled = isIdleTimerDisabled
+                        Toggle("Prevenir bloqueo", isOn: $isIdleTimerDisabled).onChange(of: isIdleTimerDisabled) { _, newValue in
+                            UIApplication.shared.isIdleTimerDisabled = newValue
                         }
                 }
                 
@@ -38,8 +38,20 @@ struct SettingsView: View {
             }
             .navigationTitle("Configuración")
             .toolbar() {
-                Button(action: { dismiss() }) {
-                    Text("Listo")
+                ToolbarItem(placement: .cancellationAction) {
+                    if #available(iOS 26.0, *) {
+                        Button(role: .close, action: {
+                            dismiss()
+                        }, label: {
+                            Label("Listo", systemImage: "xmark")
+                        })
+                    } else {
+                        Button(action: {
+                            dismiss()
+                        }, label: {
+                            Label("Listo", systemImage: "xmark")
+                        })
+                    }
                 }
             }
         }

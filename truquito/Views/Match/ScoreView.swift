@@ -9,7 +9,6 @@ import SwiftUI
 
 struct ScoreView: View {
     var score: Score
-    @Environment(\.colorScheme) private var colorScheme
 
     init(for score: Score) {
         self.score = score
@@ -28,23 +27,9 @@ struct ScoreView: View {
         let player = score.player
 
         return VStack(alignment: .center, spacing: 0) {
-            Menu(content: {
-                if let match = score.match {
-                    ChoosePlayerMenu(match: match, onSelect: { score.player = $0 })
-                }
-            }) {
-                Text(player?.name ?? "Unknown")
-                    .font(.title2)
-                    .opacity(0.5)
-                    .padding(8)
-                    .background(
-                        RoundedRectangle(cornerRadius: 14)
-                            .fill(Color.clear)
-                            .background(BlurView(style: .systemThinMaterial).cornerRadius(14))
-                    )
+            if let match = score.match {
+                ChoosePlayerMenu(match: match, score: score)
             }
-            .tint(colorScheme == .dark ? .white : .black)
-            .onTapGesture {}
 
             Text(score.value.formatted())
                 .font(.system(size: 92, design: .monospaced))

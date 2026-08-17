@@ -8,83 +8,40 @@
 import SwiftUI
 import SwiftData
 
-struct Toolbar: View {
+struct Toolbar: ToolbarContent {
     var currentMatch: Match
+    @Binding var isSettingsPresented: Bool
 
     @Environment(\.modelContext) private var context
-    @State private var isSettingsPresented = false
-    @Environment(\.colorScheme) private var colorScheme
-
-    var target: Int { currentMatch.target }
 
     private func reset() {
         currentMatch.endDate = Date()
         context.insert(Match(players: currentMatch.players))
     }
 
-    var body: some View {
-        HStack {
-            Menu(content: {
-                Section("Seleccioná un objetivo") {
-                    ForEach(Targets.allCases, id: \.self) { option in
-                            Button(action: { currentMatch.target = option.rawValue }) { Text("Jugar a \(option.rawValue)")
-                        }
-                    }
+    var body: some ToolbarContent {
+        ToolbarItem(placement: .topBarLeading) {
+            Picker(selection: Binding(
+                get: { currentMatch.target },
+                set: { currentMatch.target = $0 }
+            )) {
+                ForEach(Targets.allCases, id: \.self) { option in
+                    Text("Jugar a \(option.rawValue)").tag(option.rawValue)
                 }
-            }) {
-                HStack {
-                    Image(systemName: "target")
-                    Text("\(target)")
-                        .font(.title3)
-                        .padding(2)
-                }
-                .padding(8)
-                .background(
-                    RoundedRectangle(cornerRadius: 14)
-                        .fill(Color.clear)
-                        .background(
-                            BlurView(style: .systemThinMaterial)
-                                .cornerRadius(14)
-                        )
-                )
-
+            } label: {
+                Label("\(currentMatch.target)", systemImage: "target")
             }
-            .tint(colorScheme == .dark ? .white : .black)
-            .onTapGesture {}
+            .pickerStyle(.menu)
+        }
 
-            Spacer()
-            Button(action: { reset() }) {
-                Image(systemName: "arrow.counterclockwise.circle")
-                    .resizable()
-                    .frame(width: 28, height: 28)
-                    .zIndex(1)
-                    .padding(8)
-                    .background(
-                        Circle()
-                            .fill(Color.clear)
-                            .background(BlurView(style: .systemThinMaterial).cornerRadius(100))
-                    )
+        ToolbarItemGroup(placement: .topBarTrailing) {
+            Button(action: reset) {
+                Image(systemName: "arrow.trianglehead.counterclockwise")
             }
+
             Button(action: { isSettingsPresented.toggle() }) {
-                Image(systemName: "ellipsis.circle")
-                    .resizable()
-                    .frame(width: 28, height: 28)
-                    .zIndex(1)
-                    .padding(8)
-                    .background(
-                        Circle()
-                            .fill(Color.clear)
-                            .background(BlurView(style: .systemThinMaterial).cornerRadius(100))
-                    )
+                Image(systemName: "gear")
             }
         }
-        .padding()
-        .zIndex(10)
-        .tint(colorScheme == .dark ? .white : .black)
-        .opacity(0.5)
-        .onTapGesture { isSettingsPresented.toggle() }
-        .sheet(isPresented: $isSettingsPresented) {
-            SettingsView()
-        }
-
-    }}
+    }
+}
