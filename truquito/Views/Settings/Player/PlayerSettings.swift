@@ -40,7 +40,7 @@ struct PlayerSettings: View {
                 })
             }
             Section("Color") {
-                ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false).onChange(of: color) {
+                PlayerColorPicker(selection: $color).onChange(of: color) {
                     player.color = color
                 }
             }

@@ -10,6 +10,7 @@
 		297CED78C09A779D0B1DE2C9 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = EDCC68C71B360F9F5BFA9BFA /* Player.swift */; };
 		49D18A51500A2E59A89883A1 /* Score.swift in Sources */ = {isa = PBXBuildFile; fileRef = 585FF9FBCB19791BB34963EF /* Score.swift */; };
 		9170B8F6CB537AD80DC8E204 /* Match.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5E843BCFC17B8EBF20CD1DA0 /* Match.swift */; };
+		9F5D9F32D23FBB3684DF07A8 /* PlayerColorPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5552B1E6BCEAE7AC15313167 /* PlayerColorPicker.swift */; };
 		C302DF4029BE09E900631AC0 /* AboutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DF3F29BE09E900631AC0 /* AboutView.swift */; };
 		C302DF4229BE11E600631AC0 /* ExternalLinkView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */; };
 		C32941F82933E21F00298ACC /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C32941F72933E21F00298ACC /* SettingsView.swift */; };
@@ -43,6 +44,7 @@
 /* Begin PBXFileReference section */
 		585FF9FBCB19791BB34963EF /* Score.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Score.swift; sourceTree = "<group>"; };
 		5E843BCFC17B8EBF20CD1DA0 /* Match.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Match.swift; sourceTree = "<group>"; };
+		5552B1E6BCEAE7AC15313167 /* PlayerColorPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerColorPicker.swift; sourceTree = "<group>"; };
 		C302DF3F29BE09E900631AC0 /* AboutView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutView.swift; sourceTree = "<group>"; };
 		C302DF4129BE11E600631AC0 /* ExternalLinkView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExternalLinkView.swift; sourceTree = "<group>"; };
 		C32941F72933E21F00298ACC /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
@@ -132,6 +134,7 @@
 				C35DBB7A299AD18200C6E43A /* PlayerListPreview.swift */,
 				C38EA1BB299F95A200FDC82A /* CreatePlayer.swift */,
 				C3D073C429A28B5B000A1494 /* PlayerList.swift */,
+				5552B1E6BCEAE7AC15313167 /* PlayerColorPicker.swift */,
 			);
 			path = Player;
 			sourceTree = "<group>";
@@ -327,6 +330,7 @@
 				C3E3A221299FDC17001683A0 /* Toolbar.swift in Sources */,
 				297CED78C09A779D0B1DE2C9 /* Player.swift in Sources */,
 				9170B8F6CB537AD80DC8E204 /* Match.swift in Sources */,
+				9F5D9F32D23FBB3684DF07A8 /* PlayerColorPicker.swift in Sources */,
 				49D18A51500A2E59A89883A1 /* Score.swift in Sources */,
 				C35DBB77299957C500C6E43A /* PersitenceController.swift in Sources */,
 				C35DBB7B299AD18200C6E43A /* PlayerListPreview.swift in Sources */,

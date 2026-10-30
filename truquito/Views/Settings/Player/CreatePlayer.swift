@@ -29,7 +29,7 @@ struct CreatePlayer: View {
                     TextField("Nombre", text: $name)
                 }
                 Section("Color") {
-                    ColorPicker("Seleccioná un color", selection: $color, supportsOpacity: false)
+                    PlayerColorPicker(selection: $color)
                 }
             }
 
